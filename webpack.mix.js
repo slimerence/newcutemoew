@@ -40,4 +40,6 @@ mix.copyDirectory(['resources/assets/images'],'public/images')
     .copyDirectory(['resources/views/frontend/custom/cutemoew/assets/images'],'public/images')
     .copyDirectory(['resources/views/frontend/custom/cutemoew/assets/js'],'public/js')
     .copyDirectory(['resources/views/frontend/custom/cutemoew/assets/fonts'],'public/fonts')
+    .copyDirectory(['resources/views/frontend/custom/cutemoew/assets/owl-carousel'],'public/js/owl-carousel')
+    .copyDirectory(['resources/views/frontend/custom/cutemoew/assets/simple-line-icon'],'public/js/simple-line-icon')
 ;

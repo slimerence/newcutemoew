@@ -59,7 +59,7 @@
                             <ul>
                                 <li><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
                                 <li><a href="#"><i class="fa fa-sliders" aria-hidden="true"></i></a></li>
-                                <li><a href="#" ><i class="fa fa-search" aria-hidden="true"></i></a></li>
+                                <li><a href="#" data-toggle="modal" data-target="#quickModal" data-whatever="@mdo"><i class="fa fa-search" aria-hidden="true"></i></a></li>
                             </ul>
                         </div>
                         <!-- /.hover-img -->
@@ -120,7 +120,7 @@
                             <ul>
                                 <li><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
                                 <li><a href="#"><i class="fa fa-sliders" aria-hidden="true"></i></a></li>
-                                <li><a href="#" data-toggle="modal" data-target="#quickModal" data-whatever="@mdo"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
                             </ul>
                         </div>
                         <div class="new tage"> <span class="new-text">NEW</span> <span class="pres-text">-15%</span> </div>
@@ -375,19 +375,19 @@
     <div class="container">
         <ul>
             <li>
-                <a href="#"><img src="assets/images/client-logo1.png" alt="client-logo1" /></a>
+                <a href="#"><img src="{{ asset('images/client-logo1.png') }}" alt="client-logo1" /></a>
             </li>
             <li>
-                <a href="#"><img src="assets/images/client-logo2.png" alt="client-logo2" /></a>
+                <a href="#"><img src="{{ asset('images/client-logo2.png') }}" alt="client-logo2" /></a>
             </li>
             <li>
-                <a href="#" class="active"><img src="assets/images/client-logo3.png" alt="client-logo3" /></a>
+                <a href="#" class="active"><img src="{{ asset('images/client-logo3.png') }}" alt="client-logo3" /></a>
             </li>
             <li>
-                <a href="#"><img src="assets/images/client-logo4.png" alt="client-logo4" /></a>
+                <a href="#"><img src="{{ asset('images/client-logo4.png') }}" alt="client-logo4" /></a>
             </li>
             <li>
-                <a href="#"><img src="assets/images/client-logo5.png" alt="client-logo4" /></a>
+                <a href="#"><img src="{{ asset('images/client-logo5.png') }}" alt="client-logo4" /></a>
             </li>
         </ul>
     </div>
@@ -403,7 +403,7 @@
         <div class="col-sm-4 col-md-4 wow fadeIn" data-wow-duration=".2s" data-wow-delay=".1s">
             <div class="news-box">
                 <div class="news-img">
-                    <img src="assets/images/blog-img1.jpg" alt="news-img1" />
+                    <img src="{{ asset('images/blog-img1.jpg') }}" alt="news-img1" />
                 </div>
                 <div class="news-text"> <a href="#">Anteposuerit litterarum formas.</a>
                     <p>By <span>Zcubedesign</span> / September 11, 2017</p>
@@ -413,7 +413,7 @@
         <div class="col-sm-4 col-md-4 wow fadeIn" data-wow-duration=".2s" data-wow-delay=".1s">
             <div class="news-box">
                 <div class="news-img">
-                    <img src="assets/images/blog-img2.jpg" alt="news-img1" />
+                    <img src="{{ asset('images/blog-img2.jpg') }}" alt="news-img1" />
                 </div>
                 <div class="news-text"> <a href="#">Anteposuerit litterarum formas.</a>
                     <p>By <span>Zcubedesign</span> / September 11, 2017</p>
@@ -423,7 +423,7 @@
         <div class="col-sm-4 col-md-4 wow fadeIn" data-wow-duration=".4s" data-wow-delay=".3s">
             <div class="news-box">
                 <div class="news-img">
-                    <img src="assets/images/blog-img3.jpg" alt="news-img1" />
+                    <img src="{{ asset('images/blog-img3.jpg') }}" alt="news-img1" />
                 </div>
                 <div class="news-text"> <a href="#">Anteposuerit litterarum formas.</a>
                     <p>By <span>Zcubedesign</span> / September 11, 2017</p>
@@ -453,29 +453,29 @@
                                     <div class="carousel-inner">
                                         <div class="item active">
                                             <div class="caption">
-                                                <img src="assets/images/Products/1.jpg" alt="qoute-icon">
+                                                <img src="{{ asset('images/Products/1.jpg') }}" alt="qoute-icon">
                                             </div>
                                         </div>
                                         <div class="item">
                                             <div class="caption">
-                                                <img src="assets/images/Products/11.jpg" alt="qoute-icon">
+                                                <img src="{{ asset('images/Products/11.jpg') }}" alt="qoute-icon">
                                             </div>
                                         </div>
                                         <div class="item">
                                             <div class="caption">
-                                                <img src="assets/images/Products/8.jpg" alt="qoute-icon">
+                                                <img src="{{ asset('images/Products/8.jpg') }}" alt="qoute-icon">
                                             </div>
                                         </div>
                                         <div class="item">
                                             <div class="caption">
-                                                <img src="assets/images/Products/16.jpg" alt="qoute-icon">
+                                                <img src="{{ asset('images/Products/16.jpg') }}" alt="qoute-icon">
                                             </div>
                                         </div>
                                         <ul class="carousel-indicators">
-                                            <li data-target="#home-slider3" data-slide-to="0" class="active"> <img src="assets/images/Products/1.jpg" alt="qoute-icon"></li>
-                                            <li data-target="#home-slider3" data-slide-to="1" class=""> <img src="assets/images/Products/11.jpg" alt="qoute-icon"></li>
-                                            <li data-target="#home-slider3" data-slide-to="2" class=""> <img src="assets/images/Products/8.jpg" alt="qoute-icon"></li>
-                                            <li data-target="#home-slider3" data-slide-to="3" class=""> <img src="assets/images/Products/16.jpg" alt="qoute-icon"></li>
+                                            <li data-target="#home-slider3" data-slide-to="0" class="active"> <img src="{{ asset('images/Products/1.jpg') }}" alt="qoute-icon"></li>
+                                            <li data-target="#home-slider3" data-slide-to="1" class=""> <img src="{{ asset('images/Products/11.jpg') }}" alt="qoute-icon"></li>
+                                            <li data-target="#home-slider3" data-slide-to="2" class=""> <img src="{{ asset('images/Products/8.jpg') }}" alt="qoute-icon"></li>
+                                            <li data-target="#home-slider3" data-slide-to="3" class=""> <img src="{{ asset('images/Products/6.jpg') }}" alt="qoute-icon"></li>
                                         </ul>
                                     </div>
                                     <!-- /.home-slider -->

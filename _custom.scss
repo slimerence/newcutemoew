@@ -20,6 +20,8 @@ h1, h2, h3, p, a{
 
 .navbar.navbar-inverse.navbar-default{
   background-color: $bgcolor;
+  box-shadow: 1px 1px 16px 0px #d8ccc4;
+  padding: 0;
 }
 
 .navbar-brand {
@@ -76,6 +78,7 @@ img{
   padding: 3em;
   background-color: rgba(252, 239, 231, 0.71);
   border-radius: 1.5em;
+  box-shadow: 1px 1px 16px 0px #d8ccc4;
   p{
     display: inline;
   }
@@ -158,3 +161,4 @@ footer{
   -moz-border-radius: 1.5em;
   border-radius: 1.5em;
 }
+
