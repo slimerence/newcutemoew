@@ -8,7 +8,7 @@
 </div>
 <header>
     @include(_get_frontend_layout_path('frontend._nav'))
-    @include(_get_frontend_layout_path('frontend.elements.topbar'))
+    @yield('topbar')
 </header>
 @yield('content')
 @include(_get_frontend_layout_path('frontend._footer'))

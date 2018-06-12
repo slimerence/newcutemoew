@@ -1,4 +1,16 @@
 @extends(_get_frontend_layout_path('catalog'))
+@section('topbar')
+    <div class="inner-header" style="background: url({{ asset('images/cutemoew/slideshow_1.jpg') }});">
+        <h2>Shop Categories</h2>
+        <div class="bdr">
+            <ul>
+                <li>Home</li>
+                <li>/</li>
+                <li><span>Shop  Categories</span></li>
+            </ul>
+        </div>
+    </div>
+@endsection
 @section('content')
     <section class="grid-shop blog" id="category-view-manager">
         <!-- .grid-shop -->
