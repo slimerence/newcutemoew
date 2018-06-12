@@ -1,6 +1,6 @@
 @extends(_get_frontend_layout_path('catalog'))
 @section('content')
-    <section class="grid-shop blog">
+    <section class="grid-shop blog" id="category-view-manager">
         <!-- .grid-shop -->
         <div class="container">
             <div class="row">
@@ -10,157 +10,33 @@
                             <h2>Product Categories</h2>
                         </div>
                         <div class="panel-group" id="accordion">
-                            <div class="panel panel-default">
+                            @foreach($categoriesTree as $item)
+                                <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
-                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                                            Mobile &amp; Accessories
-                                        </a><i class="indicator fa fa-angle-right  pull-right"></i>
-                                    </h4>
-                                </div>
-                                <div id="collapseOne" class="panel-collapse collapse">
-                                    <div class="panel-body">
-                                        <div class="product-categories">
-                                            <ul>
-                                                <li><a href="#">Laptop &amp; Computer </a></li>
-                                                <li><a href="#">Accessories  </a></li>
-                                                <li><a href="#">Gaming </a></li>
-                                                <li><a href="#">Mac Computers </a></li>
-                                                <li><a href="#">Ultrabooks</a></li>
-                                                <li><a href="#">Printers &amp; Ink </a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-                                            Electronics
+                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="{{ '#col'.$item->id }}">
+                                            {{$item->name}}
                                         </a><i class="indicator fa fa-angle-right pull-right"></i>
                                     </h4>
                                 </div>
-                                <div id="collapseTwo" class="panel-collapse collapse">
+                                <?php $sub= $item->loadForNav();
+                                    $subchild = $sub['subs'];
+                                ?>
+                                @if(count($sub['subs'])>0 || count($sub['products']) > 0)
+                                <div id="{{ 'col'.$item->id }}" class="panel-collapse collapse">
                                     <div class="panel-body">
                                         <div class="product-categories">
                                             <ul>
-                                                <li><a href="#">Laptop &amp; Computer </a></li>
-                                                <li><a href="#">Accessories  </a></li>
-                                                <li><a href="#">Gaming </a></li>
-                                                <li><a href="#">Mac Computers </a></li>
-                                                <li><a href="#">Ultrabooks</a></li>
-                                                <li><a href="#">Printers &amp; Ink </a></li>
+                                            @foreach($subchild as $subnav)
+                                            <li><a href="{{ url('category/view/'.$subnav['uri'] )}}">{{$subnav['name']}} ({{count($sub['products'])}})</a></li>
+                                            @endforeach
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-                                            Men's Fashion
-                                        </a><i class="indicator fa fa-angle-down pull-right"></i>
-                                    </h4>
-                                </div>
-                                <div id="collapseThree" class="panel-collapse collapse in">
-                                    <div class="panel-body">
-                                        <div class="product-categories">
-                                            <ul>
-                                                <li><a href="#">T-shirts</a></li>
-                                                <li><a href="#">Shirts</a></li>
-                                                <li><a href="#">Suits </a></li>
-                                                <li><a href="#">Jackets</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
-                                            Women's Fashion
-                                        </a><i class="indicator fa fa-angle-right pull-right"></i>
-                                    </h4>
-                                </div>
-                                <div id="collapseFour" class="panel-collapse collapse">
-                                    <div class="panel-body">
-                                        <div class="product-categories">
-                                            <ul>
-                                                <li><a href="#">T-shirts</a></li>
-                                                <li><a href="#">Shirts</a></li>
-                                                <li><a href="#">Suits </a></li>
-                                                <li><a href="#">Jackets</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
-                                            Kitchen
-                                        </a><i class="indicator fa fa-angle-right pull-right"></i>
-                                    </h4>
-                                </div>
-                                <div id="collapseFive" class="panel-collapse collapse">
-                                    <div class="panel-body">
-                                        <div class="product-categories">
-                                            <ul>
-                                                <li><a href="#">T-shirts</a></li>
-                                                <li><a href="#">Shirts</a></li>
-                                                <li><a href="#">Suits </a></li>
-                                                <li><a href="#">Jackets</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseSix">
-                                            Sports
-                                        </a><i class="indicator fa fa-angle-right pull-right"></i>
-                                    </h4>
-                                </div>
-                                <div id="collapseSix" class="panel-collapse collapse">
-                                    <div class="panel-body">
-                                        <div class="product-categories">
-                                            <ul>
-                                                <li><a href="#">T-shirts</a></li>
-                                                <li><a href="#">Shirts</a></li>
-                                                <li><a href="#">Suits </a></li>
-                                                <li><a href="#">Jackets</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven">
-                                            Furniture
-                                        </a><i class="indicator fa fa-angle-right pull-right"></i>
-                                    </h4>
-                                </div>
-                                <div id="collapseSeven" class="panel-collapse collapse">
-                                    <div class="panel-body">
-                                        <div class="product-categories">
-                                            <ul>
-                                                <li><a href="#">T-shirts</a></li>
-                                                <li><a href="#">Shirts</a></li>
-                                                <li><a href="#">Suits </a></li>
-                                                <li><a href="#">Jackets</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            </div>@endif
+                            @endforeach
+
                         </div>
                     </div>
                     <div class="weight">
@@ -180,274 +56,91 @@
                         </div>
                         <!-- End of Bootstrap Pricing Slider by ZsharE -->
                     </div>
-                    <div class="weight">
-                        <div class="title">
-                            <h2>colors filte</h2>
+
+                    @if(isset($promotionProducts) && count($promotionProducts)>0)
+                        <div class="weight">
+                            <div class="title">
+                                <h2>BEST PRODUCTS</h2>
+                            </div>
+                            <div class="toprating-box">
+                                <ul>
+                                    @foreach($promotionProducts as $promotionProduct)
+                                        <li>
+                                            <div class="col-sm-3 col-md-3"><img src="{{ $promotionProduct->getProductDefaultImageUrl() }}" alt="{{ $promotionProduct->name }}"></div>
+                                            <div class="col-sm-9 col-md-9">
+                                                <div class="pro-text"> <a href="{{ url('catalog/product/'.$promotionProduct->uri) }}">{{ $promotionProduct->name }}</a>
+                                                    @if($promotionProduct->special_price)
+                                                    <strong>${{ $promotionProduct->getSpecialPriceGST() }}</strong> <span>${{ $promotionProduct->getDefaultPriceGST() }}</span>
+                                                        @else <strong>${{ $promotionProduct->getDefaultPriceGST() }}</strong>
+                                                    @endif
+                                                </div>
+                                            </div>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </div>
                         </div>
-                        <div class="color">
-                            <ul>
-                                <li><a href="#" class="color-1"><span></span></a></li>
-                                <li><a href="#" class="color-2"><span></span></a></li>
-                                <li><a href="#" class="color-3"><span></span></a></li>
-                                <li><a href="#" class="color-4"><span></span></a></li>
-                                <li><a href="#" class="color-5"><span></span></a></li>
-                                <li><a href="#" class="color-6"><span></span></a></li>
-                                <li><a href="#" class="color-7"><span></span></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="weight">
-                        <div class="title">
-                            <h2>size options</h2>
-                        </div>
-                        <div class="product-categories size">
-                            <ul>
-                                <li><a href="#">L </a></li>
-                                <li><a href="#">M</a></li>
-                                <li><a href="#">S</a></li>
-                                <li><a href="#">XL</a></li>
-                                <li><a href="#">XXL</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="weight">
-                        <div class="title">
-                            <h2>BEST PRODUCTS</h2>
-                        </div>
-                        <div class="toprating-box">
-                            <ul>
-                                <li>
-                                    <div class="col-sm-3 col-md-3"><img src="assets/images/Products/13.jpg" alt="13"></div>
-                                    <div class="col-sm-9 col-md-9">
-                                        <div class="pro-text"> <a href="#">Wooden container Bowl</a>
-                                            <strong>$96.00</strong> <span>$160.00</span> </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="col-sm-3 col-md-3"><img src="assets/images/Products/14.jpg" alt="14"></div>
-                                    <div class="col-sm-9 col-md-9">
-                                        <div class="pro-text"> <a href="#">Wooden container Bowl</a>
-                                            <strong>$160.00</strong> </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="col-sm-3 col-md-3"><img src="assets/images/Products/15.jpg" alt="15"></div>
-                                    <div class="col-sm-9 col-md-9">
-                                        <div class="pro-text"> <a href="#">Wooden container Bowl</a>
-                                            <strong>$160.00</strong> </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                @endif
                 </div>
                 <div class="col-sm-9 col-md-9">
                     <div class="grid-spr">
                         <div class="col-sm-5 col-md-5"> <span>Showing 1-12 of 30 relults</span> </div>
                         <div class="col-sm-7 col-md-7 text-right">
-                            <div class="select-option">
-                                <select>
-                                    <option value="New Pots">New</option>
-                                    <option value="Recent Pots">Recent</option>
-                                    <option value="Featured Pots">Defaul sorting</option>
-                                </select>
-                            </div> <a href="#" class="grid-view-icon"><i class="fa fa-th-large" aria-hidden="true"></i></a> <a href="#" class="list-view-icon"><i class="fa fa-list" aria-hidden="true"></i></a> </div>
-                    </div>
-                    <div class="row wow zoomIn animated" data-wow-duration=".5s" data-wow-delay=".2s">
-                        <div class="col-md-4">
-                            <!-- .pro-text -->
-                            <div class="pro-text">
-                                <!-- .pro-img -->
-                                <div class="pro-img"> <img src="assets/images/Products/21.jpg" alt="2">
-                                    <!-- .hover-img -->
-                                    <div class="hover-img">
-                                        <ul>
-                                            <li><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-sliders" aria-hidden="true"></i></a></li>
-                                            <li><a href="#" data-toggle="modal" data-target="#quickModal" data-whatever="@mdo"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <!-- /.hover-img -->
-                                </div>
-                                <!-- /.pro-img --><a href="#">Wooden container Bowl</a> <a href="#" class="addtocart">+ Add to cart</a>
-                                <div class="price">$160.00</div>
-                            </div>
-                            <!-- /.pro-text -->
-                        </div>
-                        <div class="col-md-4">
-                            <!-- .pro-text -->
-                            <div class="pro-text">
-                                <!-- .pro-img -->
-                                <div class="pro-img"> <img src="assets/images/Products/26.jpg" alt="2">
-                                    <!-- .hover-img -->
-                                    <div class="hover-img">
-                                        <ul>
-                                            <li><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-sliders" aria-hidden="true"></i></a></li>
-                                            <li><a href="#" data-toggle="modal" data-target="#quickModal" data-whatever="@mdo"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="new tage"> <span class="new-text">NEW</span> <span class="pres-text">-15%</span> </div>
-                                    <!-- /.hover-img -->
-                                </div>
-                                <!-- /.pro-img --><a href="#">Wooden container Bowl</a> <a href="#" class="addtocart">+ Add to cart</a>
-                                <div class="price">$160.00</div>
-                            </div>
-                            <!-- /.pro-text -->
-                        </div>
-                        <div class="col-md-4">
-                            <!-- .pro-text -->
-                            <div class="pro-text">
-                                <!-- .pro-img -->
-                                <div class="pro-img"> <img src="assets/images/Products/24.jpg" alt="2">
-                                    <!-- .hover-img -->
-                                    <div class="hover-img">
-                                        <ul>
-                                            <li><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-sliders" aria-hidden="true"></i></a></li>
-                                            <li><a href="#" data-toggle="modal" data-target="#quickModal" data-whatever="@mdo"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <!-- /.hover-img -->
-                                </div>
-                                <!-- /.pro-img --><a href="#">Wooden container Bowl</a> <a href="#" class="addtocart">+ Add to cart</a>
-                                <div class="price">$160.00</div>
-                            </div>
-                            <!-- /.pro-text -->
-                        </div>
-                        <div class="col-md-4">
-                            <!-- .pro-text -->
-                            <div class="pro-text">
-                                <!-- .pro-img -->
-                                <div class="pro-img"> <img src="assets/images/Products/17.jpg" alt="2">
-                                    <!-- .hover-img -->
-                                    <div class="hover-img">
-                                        <ul>
-                                            <li><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-sliders" aria-hidden="true"></i></a></li>
-                                            <li><a href="#" data-toggle="modal" data-target="#quickModal" data-whatever="@mdo"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="new tage"> <span class="new-text">NEW</span> <span class="pres-text">-15%</span> </div>
-                                    <!-- /.hover-img -->
-                                </div>
-                                <!-- /.pro-img --><a href="#">Wooden container Bowl</a> <a href="#" class="addtocart">+ Add to cart</a>
-                                <div class="price">$160.00</div>
-                            </div>
-                            <!-- /.pro-text -->
-                        </div>
-                        <div class="col-md-4">
-                            <!-- .pro-text -->
-                            <div class="pro-text">
-                                <!-- .pro-img -->
-                                <div class="pro-img"> <img src="assets/images/Products/22.jpg" alt="2">
-                                    <!-- .hover-img -->
-                                    <div class="hover-img">
-                                        <ul>
-                                            <li><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-sliders" aria-hidden="true"></i></a></li>
-                                            <li><a href="#" data-toggle="modal" data-target="#quickModal" data-whatever="@mdo"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="new tage"> <span class="new-text">NEW</span> <span class="pres-text">-15%</span> </div>
-                                    <!-- /.hover-img -->
-                                </div>
-                                <!-- /.pro-img --><a href="#">Wooden container Bowl</a> <a href="#" class="addtocart">+ Add to cart</a>
-                                <div class="price">$160.00</div>
-                            </div>
-                            <!-- /.pro-text -->
-                        </div>
-                        <div class="col-md-4">
-                            <!-- .pro-text -->
-                            <div class="pro-text">
-                                <!-- .pro-img -->
-                                <div class="pro-img"> <img src="assets/images/Products/7.jpg" alt="2">
-                                    <!-- .hover-img -->
-                                    <div class="hover-img">
-                                        <ul>
-                                            <li><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-sliders" aria-hidden="true"></i></a></li>
-                                            <li><a href="#" data-toggle="modal" data-target="#quickModal" data-whatever="@mdo"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <!-- /.hover-img -->
-                                </div>
-                                <!-- /.pro-img --><a href="#">Wooden container Bowl</a> <a href="#" class="addtocart">+ Add to cart</a>
-                                <div class="price">$160.00</div>
-                            </div>
-                            <!-- /.pro-text -->
-                        </div>
-                        <div class="col-md-4">
-                            <!-- .pro-text -->
-                            <div class="pro-text">
-                                <!-- .pro-img -->
-                                <div class="pro-img"> <img src="assets/images/Products/19.jpg" alt="2">
-                                    <!-- .hover-img -->
-                                    <div class="hover-img">
-                                        <ul>
-                                            <li><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-sliders" aria-hidden="true"></i></a></li>
-                                            <li><a href="#" data-toggle="modal" data-target="#quickModal" data-whatever="@mdo"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="new tage"> <span class="new-text">NEW</span> <span class="pres-text">-15%</span> </div>
-                                    <!-- /.hover-img -->
-                                </div>
-                                <!-- /.pro-img --><a href="#">Wooden container Bowl</a> <a href="#" class="addtocart">+ Add to cart</a>
-                                <div class="price">$160.00</div>
-                            </div>
-                            <!-- /.pro-text -->
-                        </div>
-                        <div class="col-md-4">
-                            <!-- .pro-text -->
-                            <div class="pro-text">
-                                <!-- .pro-img -->
-                                <div class="pro-img"> <img src="assets/images/Products/6.jpg" alt="2">
-                                    <!-- .hover-img -->
-                                    <div class="hover-img">
-                                        <ul>
-                                            <li><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-sliders" aria-hidden="true"></i></a></li>
-                                            <li><a href="#" data-toggle="modal" data-target="#quickModal" data-whatever="@mdo"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="discount tage"> <span class="discount-text">-15%</span> </div>
-                                    <!-- /.hover-img -->
-                                </div>
-                                <!-- /.pro-img --><a href="#">Wooden container Bowl</a> <a href="#" class="addtocart">+ Add to cart</a>
-                                <div class="price">$160.00</div>
-                            </div>
-                            <!-- /.pro-text -->
-                        </div>
-                        <div class="col-md-4">
-                            <!-- .pro-text -->
-                            <div class="pro-text">
-                                <!-- .pro-img -->
-                                <div class="pro-img"> <img src="assets/images/Products/9.jpg" alt="2">
-                                    <!-- .hover-img -->
-                                    <div class="hover-img">
-                                        <ul>
-                                            <li><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-sliders" aria-hidden="true"></i></a></li>
-                                            <li><a href="#" data-toggle="modal" data-target="#quickModal" data-whatever="@mdo"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="discount tage"> <span class="discount-text">-15%</span> </div>
-                                    <!-- /.hover-img -->
-                                </div>
-                                <!-- /.pro-img --><a href="#">Wooden container Bowl</a> <a href="#" class="addtocart">+ Add to cart</a>
-                                <div class="price">$160.00</div>
-                            </div>
-                            <!-- /.pro-text -->
 
+                            <a href="#" class="list-view-icon"><i class="fa fa-list" aria-hidden="true"></i></a>
                         </div>
+                    </div>
+
+
+                    <div class="row wow zoomIn animated" data-wow-duration=".5s" data-wow-delay=".2s">
+                        <?php
+                        $productsChunk = $products->chunk(4);
+                        // 尝试加载产品的 Brand 的 Logo, 为了减少数据库的查询, 在这里做一个缓存
+                        $imageLogoBuffer = [];
+
+                        foreach ($productsChunk as $row) {
+                        ?>
+                            @foreach($row as $key=>$product)
+                                <div class="col-md-4">
+                            <!-- .pro-text -->
+                            <div class="pro-text">
+                                <!-- .pro-img -->
+                                <div class="pro-img"> <img src="{{ $product->getProductDefaultImageUrl() }}" alt="{{ $product->name }}">
+                                    <!-- .hover-img -->
+                                    <div class="hover-img">
+                                        <ul>
+                                            <li><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                                            <li><a href="{{ url('catalog/product/'.$product->uri) }}"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+                                        </ul>
+                                    </div>
+                                    <!--<div class="new tage"> <span class="new-text">NEW</span> <span class="pres-text">-15%</span> </div>-->
+                                    @if($product->special_price)
+                                        <div class="discount tage"> <span class="discount-text">SALE</span> </div>
+                                    @endif
+                                    <!-- /.hover-img -->
+                                </div>
+                                <!-- /.pro-img --><a href="{{ url('catalog/product/'.$product->uri) }}">{{ $product->name }}</a> <a href="{{ url('catalog/product/'.$product->uri) }}" class="addtocart">+ Add to cart</a>
+                                <div class="price">
+                                        <span style="{{ $product->special_price ? 'text-decoration: line-through;' : '' }}">${{ $product->getDefaultPriceGST() }}</span>
+                                    @if($product->special_price)
+                                        <span style="color: red;text-decoration: none;">${{ $product->getSpecialPriceGST() }}</span>
+                                    @endif
+                                </div>
+                            </div>
+                            <!-- /.pro-text -->
+                        </div>
+
+                        @endforeach
+                        <?php
+                        }
+                        ?>
                     </div>
                     <div class="pagetions">
                         <!-- .pagetions -->
                         <div class="col-md-6">
                             <ul>
-                                <li><a href="#">1</a></li>
-                                <li><a href="#" class="active">2</a></li>
+                                <li><a href="#"class="active">1</a></li>
+                                <li><a href="#">2</a></li>
                                 <li><a href="#">...</a></li>
                                 <li><a href="#">3</a></li>
                                 <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>
@@ -455,6 +148,7 @@
                         </div>
                         <div class="col-md-6 text-right"> <span>Showing 1-12 of 30 relults</span> </div>
                         <!-- /.pagetions -->
+
                     </div>
                 </div>
             </div>

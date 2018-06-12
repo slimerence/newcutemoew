@@ -57,11 +57,13 @@
                                 <?php $sub= $item->loadForNav();
                                     $subchild = $sub['subs'];
                                 ?>
+                                @if(count($sub['subs'])>0 || count($sub['products']) > 0)
                                 <ul class="dropdown-menu">
                                     @foreach($subchild as $subnav)
                                         <li><a class="dropdown-item" href="{{ url('category/view/'.$subnav['uri'] )}}">{{$subnav['name']}}</a></li>
                                     @endforeach
                                 </ul>
+                                @endif
                             </li>
                         @endforeach
                     </ul>
@@ -70,7 +72,6 @@
                 <li> <a href="contact.html"><span>Blog</span></a> </li>
                 <li> <a href="contact.html"><span>Contact</span></a> </li>
             </ul>
-            @include(_get_frontend_layout_path('frontend._navcart'));
             <!-- /.navbar-collapse -->
         </div>
     </div>

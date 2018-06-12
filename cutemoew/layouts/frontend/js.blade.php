@@ -9,7 +9,7 @@
 <script src="{{ asset('js/custom.js') }}"></script>
 <!-- owl carousel -->
 <script src="{{ asset('js/owl-carousel/owl.carousel.js') }}"></script>
-
+<script src="{{ asset('js/filter-price.js') }}"></script>
 <script src="{{ asset('js/all.js') }}"></script>
 
 @if(isset($vuejs_libs_required))
