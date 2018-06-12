@@ -19,11 +19,9 @@ mix.js('resources/assets/js/app.js', 'public/js')
 
 // combine all css/js into a single css/js
 mix.styles([
-    'public/css/app.css',
     'public/css/_custom.css'
 ], 'public/css/all.css');
 mix.scripts([
-    'public/js/app.js',
     'public/js/_custom.js'
 ], 'public/js/all.js');
 // 最终加载两个文件， all.css 和 all.js

@@ -11,7 +11,7 @@
             <ul class="nav navbar-nav">
                 <li> <a href="index.html" class="dropdown-toggle"><span>Home</span></a>
                 </li>
-                <li class="dropdown"> <a href="list.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span>Menu A</span></a>
+                <!--<li class="dropdown"> <a href="list.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span>Menu A</span></a>
                     <div class="dropdown-menu dropdownhover-bottom mega-menu" role="menu">
                         <div class="col-sm-8 col-md-8">
                             <ul>
@@ -46,105 +46,31 @@
                         </div>
                         <div class="col-sm-4 col-md-4"> <img src="{{ asset('images/cutemoew/products/cata5.png') }}" alt="Hover-menu-img"> </div>
                     </div>
-                </li>
+                </li>-->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                      <span>Menu B</span>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#" onclick="return false;">summer</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">tops and bottom sets</a></li>
-                                <li><a class="dropdown-item" href="#">tops & T-shirt</a></li>
-                                <li><a class="dropdown-item" href="#">shorts & bottom</a></li>
-                                <li><a class="dropdown-item" href="#">sun protection</a></li>
-                                <li><a class="dropdown-item" href="#">rompers & all in ones</a></li>
-                                <li><a class="dropdown-item" href="#">dress & skirt</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#" onclick="return false;">winter</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">tops and bottom sets</a></li>
-                                <li><a class="dropdown-item" href="#">jumpers & fleece tops</a></li>
-                                <li><a class="dropdown-item" href="#">fleece trackies & jean</a></li>
-                                <li><a class="dropdown-item" href="#">down jacket & hoodies</a></li>
-                                <li><a class="dropdown-item" href="#">rompers & all in ones</a></li>
-                                <li><a class="dropdown-item" href="#">dress</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#" onclick="return false;">spring&autumn</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">tops and bottom sets</a></li>
-                                <li><a class="dropdown-item" href="#">tops & jumpers</a></li>
-                                <li><a class="dropdown-item" href="#">pants & legging</a></li>
-                                <li><a class="dropdown-item" href="#">hoodies & jacket</a></li>
-                                <li><a class="dropdown-item" href="#">rompers & all in ones</a></li>
-                                <li><a class="dropdown-item" href="#">dress & skirt</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#" onclick="return false;">shoes&socks</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">baby & toddler</a></li>
-                                <li><a class="dropdown-item" href="#">girls</a></li>
-                                <li><a class="dropdown-item" href="#">boys</a></li>
-                                <li><a class="dropdown-item" href="#">fleece socks</a></li>
-                                <li><a class="dropdown-item" href="#">indoor socks</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#" onclick="return false;">accessories</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">beanie</a></li>
-                                <li><a class="dropdown-item" href="#">sun hat</a></li>
-                                <li><a class="dropdown-item" href="#">headwear</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#" onclick="return false;">eatting</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">bibs</a></li>
-                                <li><a class="dropdown-item" href="#">cute tableware</a></li>
-                                <li><a class="dropdown-item" href="#">cups & bottles</a></li>
-                                <li><a class="dropdown-item" href="#">others</a></li>
-                            </ul>
-                        </li>
-
+                        @foreach ($categoriesTree as $item)
+                            <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="{{ url('category/view/'.$item->uri) }}">{{$item ->name}}</a>
+                                <?php $sub= $item->loadForNav();
+                                    $subchild = $sub['subs'];
+                                ?>
+                                <ul class="dropdown-menu">
+                                    @foreach($subchild as $subnav)
+                                        <li><a class="dropdown-item" href="{{ url('category/view/'.$subnav['uri'] )}}">{{$subnav['name']}}</a></li>
+                                    @endforeach
+                                </ul>
+                            </li>
+                        @endforeach
                     </ul>
                 </li>
                 <li> <a href="#" class="dropdown-toggle"><span>About</span></a> </li>
                 <li> <a href="contact.html"><span>Blog</span></a> </li>
                 <li> <a href="contact.html"><span>Contact</span></a> </li>
             </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown">
-                    <a href="#" class="dropbtn"> <img src="{{ asset('images/top-icon3.png') }}" alt="top-ico3"> <span>Cart (0)</span> </a>
-                    <div class="dropdown-content">
-                        <div class="cart-content">
-                            <div class="col-sm-4 col-md-4"><img src="{{ asset('images/Products/13.jpg') }}" alt="13"></div>
-                            <div class="col-sm-8 col-md-8">
-                                <div class="pro-text"> <a href="#">Pellentesque Habitant</a>
-                                    <div class="close">x</div> <strong>$160.00</strong> </div>
-                            </div>
-                        </div>
-                        <div class="cart-content">
-                            <div class="col-sm-4 col-md-4"><img src="{{ asset('images/Products/11.jpg') }}" alt="13"></div>
-                            <div class="col-sm-8 col-md-8">
-                                <div class="pro-text"> <a href="#">Pellentesque Habitant</a>
-                                    <div class="close">x</div> <strong>$160.00</strong> </div>
-                            </div>
-                        </div>
-                        <div class="total">
-                            <div class="col-sm-6 col-md-6 text-left"> <span>Shipping :</span>
-                                <br> <strong>Total :</strong> </div>
-                            <div class="col-sm-6 col-md-6 text-right"> <strong>$0.00</strong>
-                                <br> <strong>$160.00</strong> </div>
-                        </div>
-                        <div class="col-lg-12">
-                            <a href="shopping-cart.html" class="cart-btn">VIEW CART </a>
-                            <a href="checkout.html" class="cart-btn">CHECKOUT</a>
-                        </div>
-                    </div>
-                </li>
-            </ul>
+            @include(_get_frontend_layout_path('frontend._navcart'));
             <!-- /.navbar-collapse -->
         </div>
     </div>
