@@ -4,7 +4,7 @@
 /*------------------------------------------------
  * Preloader 
 ------------------------------------------------*/  
-	$(window).load(function() {
+	$(window).on("load",function() {
 		$('#loading').fadeOut();
 		$('#preloader').delay(300).fadeOut('slow');
 		   $('#modal1').modal('show');

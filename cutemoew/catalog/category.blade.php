@@ -80,7 +80,7 @@
                                         <li>
                                             <div class="col-sm-3 col-md-3"><img src="{{ $promotionProduct->getProductDefaultImageUrl() }}" alt="{{ $promotionProduct->name }}"></div>
                                             <div class="col-sm-9 col-md-9">
-                                                <div class="pro-text"> <a href="{{ url('catalog/product/'.$promotionProduct->uri) }}">{{ $promotionProduct->name }}</a>
+                                                <div class="pro-text"> <a href="{{ url('catalog/product/'.$promotionProduct->uri) }}">{{ $promotionProduct->getProductName() }}</a>
                                                     @if($promotionProduct->special_price)
                                                     <strong>${{ $promotionProduct->getSpecialPriceGST() }}</strong> <span>${{ $promotionProduct->getDefaultPriceGST() }}</span>
                                                         @else <strong>${{ $promotionProduct->getDefaultPriceGST() }}</strong>
@@ -117,7 +117,7 @@
                             <!-- .pro-text -->
                             <div class="pro-text">
                                 <!-- .pro-img -->
-                                <div class="pro-img"> <img src="{{ $product->getProductDefaultImageUrl() }}" alt="{{ $product->name }}">
+                                <div class="pro-img"> <img src="{{ $product->getProductDefaultImageUrl() }}" alt="{{ $product->getProductName() }}">
                                     <!-- .hover-img -->
                                     <div class="hover-img">
                                         <ul>
@@ -131,7 +131,7 @@
                                     @endif
                                     <!-- /.hover-img -->
                                 </div>
-                                <!-- /.pro-img --><a href="{{ url('catalog/product/'.$product->uri) }}">{{ $product->name }}</a> <a href="{{ url('catalog/product/'.$product->uri) }}" class="addtocart">+ Add to cart</a>
+                                <!-- /.pro-img --><a href="{{ url('catalog/product/'.$product->uri) }}">{{ $product->getProductName() }}</a> <a href="{{ url('catalog/product/'.$product->uri) }}" class="addtocart">+ Add to cart</a>
                                 <div class="price">
                                         <span style="{{ $product->special_price ? 'text-decoration: line-through;' : '' }}">${{ $product->getDefaultPriceGST() }}</span>
                                     @if($product->special_price)

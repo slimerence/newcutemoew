@@ -125,7 +125,6 @@ if(document.getElementById('catalog-viewer-app')){
         }
     });
 }
-
 // Homepage 上播放的视频
 if(document.getElementById('homepage-video')){
     let containerWidth = $('.container').width();

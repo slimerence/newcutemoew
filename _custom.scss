@@ -189,3 +189,20 @@ footer{
     font-family: "Poppins", sans-serif;
   }
 }
+
+.dropdown-menu>li>a:hover {
+  background-color:$bgcolor;
+  border-radius:0.8em;
+}
+
+.contact-info img{
+  border-radius: 0;
+}
+
+#input-email {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 0;
+  font-size: 13px;
+  padding: 10px;
+}

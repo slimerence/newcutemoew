@@ -15,7 +15,6 @@
     <section class="grid-shop" id="product-view-manager-app">
         <!-- product-bg -->
         <div class="product-detail-bg">
-
             <div class="container">
                 <div class="bdr">
                     <ul>
@@ -23,7 +22,7 @@
                         <li>/</li>
                         <li>Shop </li>
                         <li>/</li>
-                        <li><span>Products Simple</span></li>
+                        <li><span>{{ $product->getProductName() }}</span></li>
                     </ul>
                 </div>
                 <div class="row">
@@ -44,10 +43,11 @@
                         <!-- .pro-text -->
                         <div class="pro-text product-detail">
                             <!-- /.pro-img -->
-                                <h4>{{ $product->name }}&nbsp;
+                                <h4>{{ $product->getProductName() }}&nbsp;
                                     @if($product->manage_stock && $product->stock<$product->min_quantity)
                                         <span class="badge badge-pill badge-danger">Out of Stock</span>
                                     @endif</h4>
+                            <!--
                             <div class="star2">
                                 <ul>
                                     <li class="red-color"><i class="fa fa-star" aria-hidden="true"></i></li>
@@ -58,7 +58,7 @@
                                     <li><a href="#">10 review(s)</a></li>
                                     <li><a href="#"> Add your review</a></li>
                                 </ul>
-                            </div>
+                            </div>-->
                             <p class="sku-txt">SKU: {{ $product->sku }}</p>
                             @if($product->special_price)
                                 <p class="price-detail">${{ $product->getSpecialPriceGST() }}<span>${{ $product->getDefaultPriceGST() }}</span></p>
@@ -117,6 +117,7 @@
                             <a href="#" class="hart"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
                             <a href="#" class="hart"><i class="fa fa-sliders" aria-hidden="true"></i></a>
                             </form>
+                            <!--tag area-->
                             <div class="tag">
                                 <p>Categories: <span>Bags, Blazers, Boots, Jackets, Pants, Shirts.</span></p>
                                 <p>Tag: <span>outerwear.</span></p>
@@ -214,7 +215,7 @@
                         <!-- .pro-text -->
                         <div class="pro-text">
                             <!-- .pro-img -->
-                            <div class="pro-img"> <img src="{{ $rp->getProductDefaultImageUrl() }}" alt="{{ $rp->name }}">
+                            <div class="pro-img"> <img src="{{ $rp->getProductDefaultImageUrl() }}" alt="{{ $rp->getProductName() }}">
                                 <!-- .hover-img -->
                                 <div class="hover-img">
                                     <ul>
@@ -225,7 +226,7 @@
                                 </div>
                                 <!-- /.hover-img -->
                             </div>
-                            <!-- /.pro-img --><a href="{{ url('catalog/product/'.$rp->uri) }}">{{ $rp->name }}</a> <a href="#" class="addtocart">+ Add to cart</a>
+                            <!-- /.pro-img --><a href="{{ url('catalog/product/'.$rp->uri) }}">{{ $rp->getProductName() }}</a> <a href="#" class="addtocart">+ Add to cart</a>
                             <div class="price">
                                 <span style="{{ $rp->special_price ? 'text-decoration: line-through;' : '' }}">${{ $rp->getDefaultPriceGST() }}</span>
                                 @if($product->special_price)

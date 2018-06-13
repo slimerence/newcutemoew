@@ -11,45 +11,9 @@
             <ul class="nav navbar-nav">
                 <li> <a href="{{ url('/') }}" class="dropdown-toggle"><span>Home</span></a>
                 </li>
-                <!--<li class="dropdown"> <a href="list.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span>Menu A</span></a>
-                    <div class="dropdown-menu dropdownhover-bottom mega-menu" role="menu">
-                        <div class="col-sm-8 col-md-8">
-                            <ul>
-                                <li><strong>summer</strong></li>
-                                <li><a href="#">tops and bottom sets</a></li>
-                                <li><a href="#">tops & T-shirt</a></li>
-                                <li><a href="#">shorts & bottom</a></li>
-                                <li><a href="#">sun protection</a></li>
-                                <li><a href="#">Sidebar</a></li>
-                                <li><a href="#">Pagination</a></li>
-                                <li><a href="#">Shop Infinity</a></li>
-                            </ul>
-                            <ul>
-                                <li><strong>winter</strong></li>
-                                <li><a href="#">tops and bottom sets</a></li>
-                                <li><a href="#">tops & T-shirt</a></li>
-                                <li><a href="#">shorts & bottom</a></li>
-                                <li><a href="#">sun protection</a></li>
-                                <li><a href="#">Simple Product</a></li>
-                                <li><a href="#">Variable Product</a></li>
-                                <li><a href="#">External Product</a></li>
-                            </ul>
-                            <ul>
-                                <li><strong>spring&autumn</strong></li>
-                                <li><a href="#">Collection</a></li>
-                                <li><a href="#">tops and bottom sets</a></li>
-                                <li><a href="#">tops & T-shirt</a></li>
-                                <li><a href="#">shorts & bottom</a></li>
-                                <li><a href="#">sun protection</a></li>
-                                <li><a href="#">Checkout</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-sm-4 col-md-4"> <img src="{{ asset('images/cutemoew/products/cata5.png') }}" alt="Hover-menu-img"> </div>
-                    </div>
-                </li>-->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="{{ url('/') }}" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                     <span>Menu B</span>
+                     <span>Category</span>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         @foreach ($categoriesTree as $item)
