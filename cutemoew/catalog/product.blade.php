@@ -100,10 +100,10 @@
                                         </small>
                                     </div>
                                     @if(!$product->manage_stock)
-                                        <button v-on:click="addToCartAction($event)" id="add-to-cart-btn" type="submit" class="button is-danger">
+                                        <button v-on:click="addToCartAction($event)" id="add-to-cart-btn" type="submit" class="addtocart2">
                                             <i class="fa fa-cart-plus" aria-hidden="true"></i>&nbsp;Add to Cart
                                         </button>
-                                        <a href="{{ url('/frontend/place_order_checkout') }}" id="shortcut-checkout-btn" class="button is-link shortcut-checkout-btn is-invisible">
+                                        <a href="{{ url('/frontend/place_order_checkout') }}" id="shortcut-checkout-btn" class="addtocart2">
                                             <i class="fa fa-credit-card" aria-hidden="true"></i>&nbsp;Checkout Now!
                                         </a>
                                     @else
@@ -114,10 +114,9 @@
                                         @endif
                                     @endif
                                 </div>
-                            </form>
-                            <a href="#" class="addtocart2">Add to cart</a>
                             <a href="#" class="hart"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
                             <a href="#" class="hart"><i class="fa fa-sliders" aria-hidden="true"></i></a>
+                            </form>
                             <div class="tag">
                                 <p>Categories: <span>Bags, Blazers, Boots, Jackets, Pants, Shirts.</span></p>
                                 <p>Tag: <span>outerwear.</span></p>
