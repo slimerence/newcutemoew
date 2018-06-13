@@ -108,9 +108,9 @@
                                         </a>
                                     @else
                                         @if($product->stock<$product->min_quantity)
-                                            <button id="send-enquiry-for-shopping-btn" type="submit" class="button">Send Enquiry</button>
+                                            <button id="send-enquiry-for-shopping-btn" type="submit" class="addtocart2">Send Enquiry</button>
                                         @else
-                                            <button id="add-to-cart-btn" type="submit" class="button add-to-cart-btn">Add to Cart</button>
+                                            <button id="add-to-cart-btn" type="submit" class="addtocart2">Add to Cart</button>
                                         @endif
                                     @endif
                                 </div>
