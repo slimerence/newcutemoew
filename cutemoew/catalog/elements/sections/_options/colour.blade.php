@@ -1,7 +1,7 @@
 @if(count($product_colours)>0)
-    <div class="hidden-first">
-        <div class="float-left mr-4 mt-1" style="{{ $agentObject->isPhone() ? 'width: 12%;' : 'width: 20%;' }}">Color:</div>
-        <el-select style="float: left;" v-model="selectedColour" placeholder="Please Choose Colour ...">
+    <div class="size">
+        <p>Color *</p>
+        <el-select style="float: left; width: 100%" v-model="selectedColour" placeholder="Please Choose Colour ...">
             <el-option v-for="(item, colorIndex) in productColours"
                     :key="item.name"
                     :label="item.name+(item.extra_money>0 ? ' + $'+item.extra_money : '')"

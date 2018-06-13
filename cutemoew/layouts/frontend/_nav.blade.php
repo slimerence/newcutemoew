@@ -3,13 +3,13 @@
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-            <a class="navbar-brand" href="#"><img src="{{ asset('images/cutemoew/LOGO.png') }}" alt="logo"></a>
+            <a class="navbar-brand" href="{{ url('/') }}"><img src="{{ asset('images/cutemoew/LOGO.png') }}" alt="logo"></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" data-hover="dropdown" data-animations="fadeIn fadeInLeft fadeInUp fadeInRight">
             <ul class="nav navbar-nav">
-                <li> <a href="index.html" class="dropdown-toggle"><span>Home</span></a>
+                <li> <a href="{{ url('/') }}" class="dropdown-toggle"><span>Home</span></a>
                 </li>
                 <!--<li class="dropdown"> <a href="list.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span>Menu A</span></a>
                     <div class="dropdown-menu dropdownhover-bottom mega-menu" role="menu">
@@ -48,7 +48,7 @@
                     </div>
                 </li>-->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="{{ url('/') }}" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                      <span>Menu B</span>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -69,8 +69,8 @@
                     </ul>
                 </li>
                 <li> <a href="#" class="dropdown-toggle"><span>About</span></a> </li>
-                <li> <a href="contact.html"><span>Blog</span></a> </li>
-                <li> <a href="contact.html"><span>Contact</span></a> </li>
+                <li> <a href="{{ url('page/blog') }}"><span>Blog</span></a> </li>
+                <li> <a href="{{ url('/contact-us') }}"><span>Contact</span></a> </li>
             </ul>
             <!-- /.navbar-collapse -->
         </div>

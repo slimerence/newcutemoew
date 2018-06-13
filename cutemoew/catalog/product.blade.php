@@ -65,53 +65,25 @@
                             @else <p>${{ $product->getDefaultPriceGST() }}</p>
                             @endif
                             @include(_get_frontend_theme_path('catalog.elements.sections.short_description'))
-                            <div class="size">
-                                <p>Size *</p>
-                                <div class="select-option">
-                                    <select>
-                                        <option value="28">28</option>
-                                        <option value="32">32</option>
-                                        <option value="34">34</option>
-                                        <option value="36">36</option>
-                                        <option value="Featured Pots">- Please select -</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="size">
-                                <p>Color *</p>
-                                <div class="select-option">
-                                    <select>
-                                        <option value="Black">Black</option>
-                                        <option value="Red">Red</option>
-                                        <option value="Featured Pots">- Please select -</option>
-                                    </select>
-                                </div>
-                            </div>
                             <form id="add-to-cart-form">
                                 {{ csrf_field() }}
                                 <input type="hidden" name="product_id" value="{{ $product->uuid }}">
                                 <input type="hidden" name="user_id" value="{{ session('user_data.uuid') }}">
 
                                 @if(count($product_colours)>0)
-                                    <div class="options-wrap">
-                                        @include(_get_frontend_theme_path('catalog.elements.sections._options.colour'))
-                                    </div>
+                                    @include(_get_frontend_theme_path('catalog.elements.sections._options.colour'))
                                 @endif
 
                                 @if(count($product_options)>0)
-                                    <div class="options-wrap">
-                                        @include(_get_frontend_theme_path('catalog.elements.sections.options'))
-                                    </div>
+                                    @include(_get_frontend_theme_path('catalog.elements.sections.options'))
                                 @endif
-
                                 <div class="add-to-cart-form-wrap">
-                                    <div class="field mb-20">
-                                        <label class="label">
-                                            Quantity
+                                    <div class="field">
+                                        <p>Quantity
                                             @if(!empty($product->unit_text))
                                                 <span class="has-text-danger is-size-7">(Unit: {{ $product->unit_text }})</span>
                                             @endif
-                                        </label>
+                                        </p>
                                         <div class="control quantity-input-wrap">
                                             <input
                                                     data-name="quantity"
@@ -124,7 +96,7 @@
                                             >
                                         </div>
                                         <small id="emailHelp" class="form-text text-muted">
-                                            Notice: Minimum quantity is <strong>{{ $product->min_quantity }}{{ !empty($product->unit_text)?' '.$product->unit_text:null }}</strong> per order.
+                                            Notice: Minimum quantity is <span>{{ $product->min_quantity }}{{ !empty($product->unit_text)?' '.$product->unit_text:null }}</span> per order.
                                         </small>
                                     </div>
                                     @if(!$product->manage_stock)
@@ -173,58 +145,55 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="row">
-                        <div class="col-sm-3 col-md-3">
-                            <div class="tab-bg2">
-                                <ul>
-                                    <li class="active"><a data-toggle="tab" href="#home">Description</a></li>
-                                    <li><a data-toggle="tab" href="#menu1">ADDITIONAL INFORMATION</a></li>
-                                    <li><a data-toggle="tab" href="#menu2">REVIEWS (4)</a></li>
-                                </ul>
-                            </div>
+                        <div class="tab-bg">
+                            <ul>
+                                <li class="active"><a data-toggle="tab" href="#home">Description</a></li>
+                                @foreach($product_attributes as $key=>$product_attribute)
+                                    @if($product_attribute->location == \App\Models\Utils\OptionTool::$LOCATION_ADDITIONAL)
+                                        <li><a data-toggle="tab" class="{{ $key==0&&empty($product->description) ? 'active' : null }}" href="#tab-content-{{$key}}">{{ $product_attribute->name }}</a></li>
+                                    @endif
+                                @endforeach
+                            </ul>
                         </div>
-                        <div class="col-md-9">
-                            <div class="tab-content tab-content2">
-                                <div id="home" class="tab-pane fade in active">
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when anunknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages..</p>
-                                    <ul>
-                                        <li>Claritas est etiam processus dynamicus.</li>
-                                        <li>Qui sequitur mutationem consuetudium lectorum. </li>
-                                        <li>Claritas est etiam processus dynamicus.</li>
-                                        <li>Qui sequitur mutationem consuetudium lectorum. </li>
-                                        <li>Claritas est etiam processus dynamicus.</li>
-                                        <li>Qui sequitur mutationem consuetudium lectorum. </li>
-                                    </ul>
-                                    <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release.</p>
-                                </div>
-                                <div id="menu1" class="tab-pane fade">
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when anunknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages..</p>
-                                    <ul>
-                                        <li>Claritas est etiam processus dynamicus.</li>
-                                        <li>Qui sequitur mutationem consuetudium lectorum. </li>
-                                        <li>Claritas est etiam processus dynamicus.</li>
-                                        <li>Qui sequitur mutationem consuetudium lectorum. </li>
-                                        <li>Claritas est etiam processus dynamicus.</li>
-                                        <li>Qui sequitur mutationem consuetudium lectorum. </li>
-                                    </ul>
-                                    <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release.</p>
-                                </div>
-                                <div id="menu2" class="tab-pane fade">
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when anunknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages..</p>
-                                    <ul>
-                                        <li>Claritas est etiam processus dynamicus.</li>
-                                        <li>Qui sequitur mutationem consuetudium lectorum. </li>
-                                        <li>Claritas est etiam processus dynamicus.</li>
-                                        <li>Qui sequitur mutationem consuetudium lectorum. </li>
-                                        <li>Claritas est etiam processus dynamicus.</li>
-                                        <li>Qui sequitur mutationem consuetudium lectorum. </li>
-                                    </ul>
-                                    <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release.</p>
-                                </div>
+                        <div class="tab-content product-detail-full">
+                            @if(!empty($product->description))
+                            <div id="home" class="tab-pane fade in active">
+                                @if(count($productDescriptionTop) > 0)
+                                    @foreach($productDescriptionTop as $b)
+                                        <ul class="list-group media-list media-list-stream">
+                                            {!! $b->content !!}
+                                        </ul>
+                                    @endforeach
+                                @endif
+                                {!! $product->description !!}
+                                @if(count($productDescriptionBottom) > 0)
+                                    <div class="is-clearfix"></div>
+                                    @foreach($productDescriptionBottom as $b)
+                                        <ul class="list-group media-list media-list-stream">
+                                            {!! $b->content !!}
+                                        </ul>
+                                    @endforeach
+                                @endif
                             </div>
+                            @endif
+                            @foreach($product_attributes as $key=>$product_attribute)
+                                @if($product_attribute->location == \App\Models\Utils\OptionTool::$LOCATION_ADDITIONAL)
+                            <div id="tab-content-{{$key}}" class="tab-pane fade {{ $key==0&&empty($product->description) ? 'active' : ' ' }}">
+                                <?php
+                                $productAttributeValue = $product_attribute->valuesOf($product);
+                                // {!! $productAttributeValue->value !!}
+                                if(count($productAttributeValue)>0){
+                                    echo $productAttributeValue[0]->value;
+                                }
+                                ?>
+                            </div>
+                                    @endif
+                            @endforeach
+
                         </div>
-                        <!-- / right side -->
                     </div>
                 </div>
+                <!-- right side -->
             </div>
         </div>
         <!-- /.grid-shop -->
