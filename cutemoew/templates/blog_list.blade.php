@@ -25,13 +25,14 @@
                         <div class="col-sm-12">
                             <div class="blog-img">
                                 <img class="img-responsive" src="{{ asset($post->feature_image) }}" alt="{{ $post->title }}">
-                                <div class="blog-img-hover"><a href="{{ url('/page/blog'.$post->uri) }}"><i class="fa fa-paperclip" aria-hidden="true"></i></a></div>
+                                <div class="blog-img-hover"><a href="{{ url('/page'.$post->uri) }}"><i class="fa fa-paperclip" aria-hidden="true"></i></a></div>
                             </div>
-                            <p class="hank"><a href="{{ url('/page/blog'.$post->uri) }}">{!! 'cn'==app()->getLocale() ? $post->title_cn : $post->title !!}</a></p>
+                            <p class="hank"><a href="{{ url('/page'.$post->uri) }}">{!! 'cn'==app()->getLocale() ? $post->title_cn : $post->title !!}</a></p>
                             <p class="time">September 14, 2017</p>
                             <p>{!! $post->teasing !!}</p>
-                            <a href="{{ url('/page/blog'.$post->uri) }}" class="readbtn">Read More</a>
+                            <a href="{{ url('/page'.$post->uri) }}" class="readbtn">Read More</a>
                         </div>
+                            
                         @endforeach
                     </div>
                 </div>
