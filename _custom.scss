@@ -276,3 +276,13 @@ footer{
 .copayright {
   padding: 0.2em 0;
 }
+
+.blog .readbtn {
+  border-radius: 1em;
+  background-color: $lightcolor;
+}
+.blog .readbtn:hover {
+  border-radius: 1em;
+  background-color: $bgcolor;
+  border-color: $lightcolor;
+}

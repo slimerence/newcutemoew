@@ -22,33 +22,7 @@
                             <h2>Product Categories</h2>
                         </div>
                         <div class="panel-group" id="accordion">
-                            @foreach($categoriesTree as $item)
-                                <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="{{ '#col'.$item->id }}">
-                                            {{$item->name}}
-                                        </a><i class="indicator fa fa-angle-right pull-right"></i>
-                                    </h4>
-                                </div>
-                                <?php $sub= $item->loadForNav();
-                                    $subchild = $sub['subs'];
-                                ?>
-                                @if(count($sub['subs'])>0 || count($sub['products']) > 0)
-                                <div id="{{ 'col'.$item->id }}" class="panel-collapse collapse">
-                                    <div class="panel-body">
-                                        <div class="product-categories">
-                                            <ul>
-                                            @foreach($subchild as $subnav)
-                                            <li><a href="{{ url('category/view/'.$subnav['uri'] )}}">{{$subnav['name']}} ({{count($sub['products'])}})</a></li>
-                                            @endforeach
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>@endif
-                            @endforeach
-
+                            @include(_get_frontend_layout_path('frontend.elements.categorymenu'))
                         </div>
                     </div>
                     <div class="weight">
@@ -104,7 +78,7 @@
 
 
                     <div class="row wow zoomIn animated" data-wow-duration=".5s" data-wow-delay=".2s">
-                        @include(_get_frontend_theme_path('catalog.elements.simple_paginate'))
+
                         <?php
                         $productsChunk = $products->chunk(4);
                         // 尝试加载产品的 Brand 的 Logo, 为了减少数据库的查询, 在这里做一个缓存
@@ -149,15 +123,7 @@
                     </div>
                     <div class="pagetions">
                         <!-- .pagetions -->
-                        <div class="col-md-6">
-                            <ul>
-                                <li><a href="#"class="active">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">...</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>
-                            </ul>
-                        </div>
+                        @include(_get_frontend_theme_path('catalog.elements.simple_paginate'))
                         <div class="col-md-6 text-right"> <span>Showing 1-12 of 30 relults</span> </div>
                         <!-- /.pagetions -->
 
