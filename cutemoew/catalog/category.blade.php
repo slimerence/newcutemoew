@@ -95,16 +95,16 @@
                 @endif
                 </div>
                 <div class="col-sm-9 col-md-9">
-                    <div class="grid-spr">
+                    <div class="row catbar">
                         <div class="col-sm-5 col-md-5"> <span>Showing 1-12 of 30 relults</span> </div>
                         <div class="col-sm-7 col-md-7 text-right">
-
-                            <a href="#" class="list-view-icon"><i class="fa fa-list" aria-hidden="true"></i></a>
+                            @include(_get_frontend_theme_path('catalog.elements.filters'))
                         </div>
                     </div>
 
 
                     <div class="row wow zoomIn animated" data-wow-duration=".5s" data-wow-delay=".2s">
+                        @include(_get_frontend_theme_path('catalog.elements.simple_paginate'))
                         <?php
                         $productsChunk = $products->chunk(4);
                         // 尝试加载产品的 Brand 的 Logo, 为了减少数据库的查询, 在这里做一个缓存

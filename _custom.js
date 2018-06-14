@@ -239,4 +239,7 @@ $(document).ready(function(){
             $(this).children('.mask').eq(0).css('top','-201px');
         });
     }
+    if($('.zoomimg').length > 0){
+        $('.zoomimg').zoom();
+    }
 });

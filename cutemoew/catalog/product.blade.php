@@ -28,11 +28,29 @@
                 <div class="row">
                     <!-- left side -->
                     <div class="col-sm-6 col-md-6">
-                        <div class="fotorama" data-allowfullscreen="true" data-nav="thumbs" data-navposition="left" data-arrows="false" data-autoplay="true" data-height="350" data-maxheight="100%">
-                            @foreach($product_images as $key=>$media)
-                                <img src="{{ asset($media->url) }}">
-                            @endforeach
+                        <!-- product gallery -->
+                        <div id="home-slider3" class="carousel fadein carousel-fade" data-ride="carousel">
+                            <!-- .home-slider -->
+                            <div class="carousel-inner">
+
+                                @foreach($product_images as $key=>$media)
+                                <div class="item col-md-10 {{ $key==0 ? 'active' : null }}">
+                                    <div class="caption zoomimg">
+                                        <img src="{{ asset($media->url) }}" alt="{{ $product->name }}">
+                                    </div>
+                                </div>
+                                @endforeach
+
+                                <ul class="carousel-indicators col-md-2">
+                                    @foreach($product_images as $key=>$media)
+                                    <li data-target="#home-slider3" data-slide-to="{{ $key }}" class="{{ $key==0 ? 'active' : null }}"> <img src="{{ asset($media->url) }}" alt="{{ $product->name }}"></li>
+                                    @endforeach
+                                </ul>
+
+                            </div>
+                            <!-- /.home-slider -->
                         </div>
+                        <!-- / product gallery -->
                         @if($product->is_group_product)
                             @include(_get_frontend_theme_path('catalog.elements.sections.grouped_products'))
                         @endif
