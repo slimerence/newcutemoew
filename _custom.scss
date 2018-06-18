@@ -286,3 +286,10 @@ footer{
   background-color: $bgcolor;
   border-color: $lightcolor;
 }
+
+.tab-pane {
+  td, th {
+    padding: 0.5em 0.7em;
+    border: 1px solid rgba(0,0,0,0.05);
+  }
+}
