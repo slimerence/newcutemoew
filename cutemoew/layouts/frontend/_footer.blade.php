@@ -4,7 +4,7 @@
             <div class="col-xs-12 col-sm-6 col-md-6">
                 <!-- f-weghit -->
                 <div class="f-weghit">
-                    <img src="{{ asset('images/cutemoew/logo.png') }}" alt="logo">
+                    <img src="{{ asset('images/cutemoew/LOGO.png') }}" alt="logo">
                     <p>If you are looking for fabulous baby clothing  or onesies in Australia, Cutemoew is the BEST place.</p>
                     <ul>
                         <li><i class="icon-location-pin icons" aria-hidden="true"></i> <strong>Add:</strong> {{ $siteConfig->contact_address }}</li>
