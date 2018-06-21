@@ -40,11 +40,10 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- End of Bootstrap Pricing Slider by ZsharE -->
                     </div>
 
                     @if(isset($promotionProducts) && count($promotionProducts)>0)
-                        <div class="weight">
+                    <div class="weight">
                             <div class="title">
                                 <h2>BEST PRODUCTS</h2>
                             </div>
