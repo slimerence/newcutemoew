@@ -18,9 +18,9 @@
             <div class="container">
                 <div class="bdr">
                     <ul>
-                        <li>Home</li>
+                        <li><a href="{{ url('/') }}">Home</a></li>
                         <li>/</li>
-                        <li>Shop </li>
+                        <li><a href="javascript:history.back()">Shop </a></li>
                         <li>/</li>
                         <li><span>{{ $product->getProductName() }}</span></li>
                     </ul>
@@ -47,6 +47,7 @@
                             </div>
                             <!-- /.home-slider -->
                         </div>
+
                         <!-- / product gallery -->
                         @if($product->is_group_product)
                             @include(_get_frontend_theme_path('catalog.elements.sections.grouped_products'))
