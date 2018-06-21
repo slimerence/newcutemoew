@@ -19,6 +19,10 @@ h1, h2, h3, p, a{
   color:rgba(61,55,53,1);
 }
 
+.pro-img img{
+  height:240px;
+}
+
 .navbar.navbar-inverse.navbar-default{
   background-color: $bgcolor;
   box-shadow: 1px 1px 16px 0px #d8ccc4;

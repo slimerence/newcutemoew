@@ -32,21 +32,18 @@
                         <div id="home-slider3" class="carousel fadein carousel-fade" data-ride="carousel">
                             <!-- .home-slider -->
                             <div class="carousel-inner">
-
                                 @foreach($product_images as $key=>$media)
-                                <div class="item col-md-10 {{ $key==0 ? 'active' : null }}">
+                                <div class="item col-md-12 {{ $key==0 ? 'active' : null }}">
                                     <div class="caption zoomimg">
                                         <img src="{{ asset($media->url) }}" alt="{{ $product->name }}">
                                     </div>
                                 </div>
                                 @endforeach
-
-                                <ul class="carousel-indicators col-md-2">
+                                <ul class="carousel-indicators col-md-12">
                                     @foreach($product_images as $key=>$media)
                                     <li data-target="#home-slider3" data-slide-to="{{ $key }}" class="{{ $key==0 ? 'active' : null }}"> <img src="{{ asset($media->url) }}" alt="{{ $product->name }}"></li>
                                     @endforeach
                                 </ul>
-
                             </div>
                             <!-- /.home-slider -->
                         </div>
@@ -143,10 +140,15 @@
                             <div class="share">
                                 <ul>
                                     <li>Share:</li>
-                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                    @if(!empty($siteConfig->facebook))
+                                        <li><a href="{{ $siteConfig->facebook }}"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                    @endif
+                                    @if(!empty($siteConfig->twitter))
+                                        <li><a href="{{ $siteConfig->twitter }}"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                    @endif
+                                    @if(!empty($siteConfig->linked_in))
+                                        <li><a href="{{ $siteConfig->linked_in }}"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                    @endif
                                 </ul>
                             </div>
 

@@ -52,7 +52,7 @@
                                 <ul>
                                     @foreach($promotionProducts as $promotionProduct)
                                         <li>
-                                            <div class="col-sm-3 col-md-3"><img src="{{ $promotionProduct->getProductDefaultImageUrl() }}" alt="{{ $promotionProduct->name }}"></div>
+                                            <div class="col-sm-3 col-md-3"><a href="{{ url('catalog/product/'.$promotionProduct->uri) }}"><img src="{{ $promotionProduct->getProductDefaultImageUrl() }}" alt="{{ $promotionProduct->name }}"></a></div>
                                             <div class="col-sm-9 col-md-9">
                                                 <div class="pro-text"> <a href="{{ url('catalog/product/'.$promotionProduct->uri) }}">{{ $promotionProduct->getProductName() }}</a>
                                                     @if($promotionProduct->special_price)
@@ -91,7 +91,7 @@
                             <!-- .pro-text -->
                             <div class="pro-text">
                                 <!-- .pro-img -->
-                                <div class="pro-img"> <img src="{{ $product->getProductDefaultImageUrl() }}" alt="{{ $product->getProductName() }}">
+                                <div class="pro-img"> <a href="{{ url('catalog/product/'.$product->uri) }}"><img src="{{ $product->getProductDefaultImageUrl() }}" alt="{{ $product->getProductName() }}"></a>
                                     <!-- .hover-img -->
                                     <div class="hover-img">
                                         <ul>
