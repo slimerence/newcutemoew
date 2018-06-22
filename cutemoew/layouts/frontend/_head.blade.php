@@ -6,6 +6,8 @@
     <title>Cutemoew | Baby Clothing Expert</title>
     <!-- Standard -->
     <link rel="shortcut icon" href="{{ asset('images/cutemoew/fav.png') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="{{ asset('css/all.css') }}" type="text/css">
 
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

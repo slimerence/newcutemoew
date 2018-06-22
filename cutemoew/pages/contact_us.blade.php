@@ -26,7 +26,6 @@
                     </div>
                     <div class="col-md-12 contact-info">
                         <ul>
-
                             <li>
                                 <div class="img-icon">
                                     <img src="{{ asset('images/contact-icon1.jpg') }}" alt="phone-icon">
@@ -49,7 +48,6 @@
                                 <br/> {{ $siteConfig->contact_email }}
                             </li>
                         </ul>
-                        <p>Outstock is a premium Templates theme with advanced admin module. It’s extremely customizable, easy to use and fully responsive and retina ready. Vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
                         <div class="f-sicon2">
                             <ul>
                                 <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
