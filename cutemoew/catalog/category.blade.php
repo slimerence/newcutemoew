@@ -51,7 +51,7 @@
                                 <ul>
                                     @foreach($promotionProducts as $promotionProduct)
                                         <li>
-                                            <div class="col-sm-3 col-md-3"><img src="{{ $promotionProduct->getProductDefaultImageUrl() }}" alt="{{ $promotionProduct->name }}"></div>
+                                            <div class="col-sm-3 col-md-3"><a href="{{ url('catalog/product/'.$promotionProduct->uri) }}"><img src="{{ $promotionProduct->getProductDefaultImageUrl() }}" alt="{{ $promotionProduct->name }}"></a></div>
                                             <div class="col-sm-9 col-md-9">
                                                 <div class="pro-text"> <a href="{{ url('catalog/product/'.$promotionProduct->uri) }}">{{ $promotionProduct->getProductName() }}</a>
                                                     @if($promotionProduct->special_price)
@@ -90,7 +90,7 @@
                             <!-- .pro-text -->
                             <div class="pro-text">
                                 <!-- .pro-img -->
-                                <div class="pro-img"> <img src="{{ $product->getProductDefaultImageUrl() }}" alt="{{ $product->getProductName() }}">
+                                <div class="pro-img"> <a href="{{ url('catalog/product/'.$product->uri) }}"><img src="{{ $product->getProductDefaultImageUrl() }}" alt="{{ $product->getProductName() }}"></a>
                                     <!-- .hover-img -->
                                     <div class="hover-img">
                                         <ul>
@@ -106,7 +106,7 @@
                                 </div>
                                 <!-- /.pro-img --><a href="{{ url('catalog/product/'.$product->uri) }}">{{ $product->getProductName() }}</a> <a href="{{ url('catalog/product/'.$product->uri) }}" class="addtocart">+ Add to cart</a>
                                 <div class="price">
-                                        <span style="{{ $product->special_price ? 'text-decoration: line-through;' : '' }}">${{ $product->getDefaultPriceGST() }}</span>
+                                        <span style="{{ !empty($product->special_price) ? 'text-decoration: line-through;' : 'text-decoration:none;' }}">${{ $product->getDefaultPriceGST() }}</span>
                                     @if($product->special_price)
                                         <span style="color: red;text-decoration: none;">${{ $product->getSpecialPriceGST() }}</span>
                                     @endif
