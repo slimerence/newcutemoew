@@ -1,5 +1,4 @@
 
-
 $bgcolor: #FCEFE7;
 $lightcolor: #fcefe747;
 @import "cutemoew/assets/css/bootstrap-dropdownhover.min.css";
@@ -28,8 +27,11 @@ h1, h2, h3, p, a{
 
 .navbar.navbar-inverse.navbar-default{
   background-color: $bgcolor;
-  box-shadow: 1px 1px 16px 0px #d8ccc4;
+  box-shadow: 1px 1px 9px 0px #ffdece;
   padding: 0;
+}
+.navbar-inverse .navbar-nav>li>a {
+  color: #606060;
 }
 
 .navbar-brand {
@@ -234,6 +236,9 @@ footer{
   .carousel-indicators{
     position: relative;
     bottom: 0;
+    img{
+      height: 100%;
+    }
   }
 }
 #home-slider3 .carousel-indicators>li{
@@ -317,7 +322,23 @@ footer{
   background-color: $bgcolor;
   border-color: $lightcolor;
 }
+.blog.blog-deatils {
+  padding: 0;
+}
+.blogimg-cov {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (min-width: 1200px){
+  .blogimg-cov {
+    width: 66.66%;
+  }
+}
 
+.blog-img2{
+  margin:0 auto;
+}
 .tab-pane {
   table{
     margin: 0 auto;
@@ -328,4 +349,50 @@ footer{
     border: 1px solid rgba(0,0,0,0.05);
   }
 }
+.pro-text a {
+  color: #606060;
+}
+.news-text-content{
+  padding:0;
+  height:100px;
+  overflow:hidden;
+}
 
+.news-text{
+  padding: 2em 0 0 0;
+}
+
+.news-img{
+  height:300px;
+  img{
+    width: 100%;
+    height:100%;
+  }
+}
+
+.checkbox input[type=checkbox] {
+  position: relative;
+  margin: auto;
+}
+#commentform {
+  .checkbox{
+  margin: 0;
+    a{
+      color: red;
+    }
+  }
+  label{
+    font-weight: 300;
+  }
+}
+#submit-contact-us-btn{
+  width: 100%;
+  margin: 1em 0 2em 0;
+  color: #606060;
+  background-color: #fcefe7;
+  border: none;
+}
+
+.el-form-item__label{
+  width: 90px;
+}

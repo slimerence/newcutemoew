@@ -50,12 +50,21 @@
                         </ul>
                         <div class="f-sicon2">
                             <ul>
-                                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                                @if(!empty($siteConfig->facebook))
+                                    <li><a href="{{ $siteConfig->facebook }}"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                @endif
+                                @if(!empty($siteConfig->twitter))
+                                    <li><a href="{{ $siteConfig->twitter }}"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                @endif
+                                @if(!empty($siteConfig->google_plus))
+                                    <li><a href="{{ $siteConfig->google_plus }}"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                                @endif
+                                @if(!empty($siteConfig->linked_in))
+                                    <li><a href="{{ $siteConfig->linked_in }}"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                @endif
+                                @if(!empty($siteConfig->instagram))
+                                    <li><a href="{{ $siteConfig->instagram }}"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                @endif
                             </ul>
                         </div>
                     </div>
@@ -103,7 +112,7 @@
                                     </label>
                                 </div>
                             </div>
-                            <div class="field is-grouped">
+                            <div class="col-md-12">
                                 <div class="control">
                                     <button class="button is-link" id="submit-contact-us-btn">Submit</button>
                                 </div>

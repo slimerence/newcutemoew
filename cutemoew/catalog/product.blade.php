@@ -4,7 +4,7 @@
         <h2>Shop Categories</h2>
         <div class="bdr">
             <ul>
-                <li>Home</li>
+                <li><a href="{{ url('/') }}">Home</a></li>
                 <li>/</li>
                 <li><span>Product Details</span></li>
             </ul>

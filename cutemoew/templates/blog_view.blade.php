@@ -17,8 +17,9 @@
         <div class="container">
             <div class="col-sm-12 col-md-12 blog-deatails">
                 <p class="hank text-center"><a href="{{ url('/page'.$blog->uri) }}">{{ $blog->title }}</a></p>
-                <p class="time text-center">September 14, 2017</p>
-                <img class="blog-img2" src="{{$blog->feature_image}}" alt="gallery1" />
+                <p class="time text-center">{{ $blog->updated_at->format('F d, Y') }}</p>
+
+                <div class="blogimg-cov"><img class="blog-img2" src="{{$blog->feature_image}}" alt="gallery1" /></div>
                 <div class="row">
                     <div class="col-lg-2"></div>
                     <div class="col-lg-8">

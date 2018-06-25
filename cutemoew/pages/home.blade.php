@@ -113,7 +113,7 @@
                 <h4>Products Essentials</h4>
                 <h3>Hauteville Plywood Chair</h3>
                 <p>The Newtown sofa range is the first product Jonas Wagell has designed for Zaozuo, but one of the last to be finalized and launched.</p>
-                <p><a href="#">Buy now / <span>$196.98</span></a></p>
+                <a href="#">Buy now / <span>$196.98</span></a>
             </div>
         </div>
         <!-- /.banner-outer -->
@@ -193,36 +193,18 @@
             <h2>Our Blog Posts</h2>
             <p>Mirum est notare quam littera gothica quam nunc putamus parum claram!</p>
         </div>
-        <div class="col-sm-4 col-md-4 wow fadeIn" data-wow-duration=".2s" data-wow-delay=".1s">
-            <div class="news-box">
-                <div class="news-img">
-                    <img src="{{ asset('images/blog-img1.jpg') }}" alt="news-img1" />
+        @foreach($posts as $key=>$post)
+            <div class="col-sm-4 col-md-4 wow fadeIn" data-wow-duration=".2s" data-wow-delay=".1s">
+                <div class="news-box">
+                    <div class="news-img">
+                        <img src="{{$post->feature_image}}" alt="{{ $post->title }}" />
+                    </div>
+                    <div class="news-text"> <a href="{{ url('/page'.$post->uri) }}">{{ $post->title }}</a>
+                        <p>By <span>{{ $siteConfig->contact_person }}</span> / {{ $post->updated_at->format('F d, Y') }}</p>
+                        <div class="news-text-content"> {!! $post->teasing !!}</div> <a href="{{ url('/page'.$post->uri) }}" class="readbtn">Read More</a> </div>
                 </div>
-                <div class="news-text"> <a href="#">Anteposuerit litterarum formas.</a>
-                    <p>By <span>Zcubedesign</span> / September 11, 2017</p>
-                    <div class="news-text-content"> Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum. </div> <a href="#" class="readbtn">Read More</a> </div>
             </div>
-        </div>
-        <div class="col-sm-4 col-md-4 wow fadeIn" data-wow-duration=".2s" data-wow-delay=".1s">
-            <div class="news-box">
-                <div class="news-img">
-                    <img src="{{ asset('images/blog-img2.jpg') }}" alt="news-img1" />
-                </div>
-                <div class="news-text"> <a href="#">Anteposuerit litterarum formas.</a>
-                    <p>By <span>Zcubedesign</span> / September 11, 2017</p>
-                    <div class="news-text-content"> Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum. </div> <a href="#" class="readbtn">Read More</a> </div>
-            </div>
-        </div>
-        <div class="col-sm-4 col-md-4 wow fadeIn" data-wow-duration=".4s" data-wow-delay=".3s">
-            <div class="news-box">
-                <div class="news-img">
-                    <img src="{{ asset('images/blog-img3.jpg') }}" alt="news-img1" />
-                </div>
-                <div class="news-text"> <a href="#">Anteposuerit litterarum formas.</a>
-                    <p>By <span>Zcubedesign</span> / September 11, 2017</p>
-                    <div class="news-text-content"> Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum. </div> <a href="#" class="readbtn">Read More</a> </div>
-            </div>
-        </div>
+        @endforeach
     </div>
     <!-- /Latest News -->
 </section>

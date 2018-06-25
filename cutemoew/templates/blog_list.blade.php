@@ -28,7 +28,7 @@
                                 <div class="blog-img-hover"><a href="{{ url('/page'.$post->uri) }}"><i class="fa fa-paperclip" aria-hidden="true"></i></a></div>
                             </div>
                             <p class="hank"><a href="{{ url('/page'.$post->uri) }}">{!! 'cn'==app()->getLocale() ? $post->title_cn : $post->title !!}</a></p>
-                            <p class="time">September 14, 2017</p>
+                            <p class="time">{{ $post->updated_at->format('F d, Y') }}</p>
                             <p>{!! $post->teasing !!}</p>
                             <a href="{{ url('/page'.$post->uri) }}" class="readbtn">Read More</a>
                         </div>

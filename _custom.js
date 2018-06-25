@@ -34,10 +34,6 @@ require('!style-loader!css-loader!photoswipe/dist/photoswipe.css');
 require('!style-loader!css-loader!photoswipe/dist/default-skin/default-skin.css');
 import 'photoswipe';
 
-// 导入 Slick Carousel
-require('!style-loader!css-loader!slick-carousel/slick/slick.css');
-require('!style-loader!css-loader!slick-carousel/slick/slick-theme.css');
-import 'slick-carousel';
 
 window.Vue = require('vue');
 // 加载Element UI 库

@@ -14,8 +14,11 @@ let mix = require('laravel-mix');
 // 前端
 mix.js('resources/assets/js/app.js', 'public/js')
     .js('resources/views/frontend/custom/_custom.js', 'public/js')
-   .sass('resources/assets/sass/app.scss', 'public/css')
-   .sass('resources/views/frontend/custom/_custom.scss', 'public/css');
+    .js('resources/views/frontend/custom/cutemoew/assets/js/custom.js', 'public/js')
+    .js('resources/views/frontend/custom/cutemoew/assets/js/filter-price.js', 'public/js')
+    .js('resources/views/frontend/custom/cutemoew/assets/js/bootstrap-dropdownhover.min.js', 'public/js')
+    .sass('resources/assets/sass/app.scss', 'public/css')
+    .sass('resources/views/frontend/custom/_custom.scss', 'public/css');
 
 // combine all css/js into a single css/js
 mix.styles([
@@ -34,10 +37,6 @@ mix.js('resources/assets/js/backend.js', 'public/js')
 *   拷贝图片等
 */
 mix.copyDirectory(['resources/assets/images'],'public/images')
-    .copyDirectory(['resources/views/frontend/custom/cutemoew/images'],'public/images/cutemoew')
     .copyDirectory(['resources/views/frontend/custom/cutemoew/assets/images'],'public/images')
-    .copyDirectory(['resources/views/frontend/custom/cutemoew/assets/js'],'public/js')
     .copyDirectory(['resources/views/frontend/custom/cutemoew/assets/fonts'],'public/fonts')
-    .copyDirectory(['resources/views/frontend/custom/cutemoew/assets/owl-carousel'],'public/js/owl-carousel')
-    .copyDirectory(['resources/views/frontend/custom/cutemoew/assets/simple-line-icon'],'public/js/simple-line-icon')
 ;

@@ -48,7 +48,7 @@
     ?>
     <div class="fotorama full-width" data-autoplay="true" data-loop="true" data-fit="contain" data-width="100%" {!! $dataAttributes !!}>
         @foreach($images as $idx=>$sliderImage)
-            <img src="{{ $sliderImage->url }}" alt="{{ $idx }}"/>
+            <a href="{{ $sliderImage->link_to }}"><img src="{{ $sliderImage->url }}" alt="{{ $idx }}"/></a>
         @endforeach
     </div>
 @endif
