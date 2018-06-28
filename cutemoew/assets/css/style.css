@@ -754,9 +754,7 @@ select {
 .blog-img img {
 	width: 100%;
 }
-.inner-blog-header {
-	background: rgba(0, 0, 0, 0) url("../images/blog-header.jpg") no-repeat scroll 0 0 / cover !important;
-}
+
 .wg-title {
 	border-bottom: 2px solid #ddd;
 	color: #333333;
@@ -1981,18 +1979,14 @@ header {
 	color: #000;
 	text-decoration: none;
 }
-.banner-outer .col-sm-6.col-md-6:first-child {
-	padding-left: 0;
-}
-.banner-outer .col-sm-6.col-md-6:last-child {
-	padding-right: 0;
-}
+
 .banner-text2 {
 	left: 8%;
 	position: absolute;
 	top: 28%;
 	width: 47%;
 }
+
 .banner-text2 h4 {
 	color: rgb(188, 130, 70);
 	font-size: 14px;

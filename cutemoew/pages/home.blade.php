@@ -46,13 +46,13 @@
     <!-- .new-arrivals -->
     <div class="container">
         <div class="tittle text-center">
-            <h2>Trending Products</h2>
+            <h2>Feature Products</h2>
             <p>Mirum est notare quam littera gothica quam nunc putamus parum claram!</p>
         </div>
 
         <div class="row animated wow zoomIn" data-wow-duration=".5s" data-wow-delay=".2s">
             @foreach($featureProducts as $featureProduct)
-            <div class="col-md-3">
+            <div class="col-md-3 col-sm-4 col-lg-3">
                 <!-- .pro-text -->
                 <div class="pro-text">
                     <!-- .pro-img -->
@@ -89,43 +89,44 @@
     <!-- /.new-arrivals -->
 </section>
 @endif
-<section class="banner-outer">
+<section class="banner-outer banner-large">
+    <div class="row" style="margin: 0 2em">
     <!-- .banner-outer -->
     <div class="col-sm-6 col-md-6">
         <!-- .banner-img -->
-        <div class="banner-img">
-            <img src="images/cutemoew/bg-banner.jpg" alt="about-img1" />
+        <div class="banner-img" style="background-image: url({{ 'images/cutemoew/b9.jpg' }})">
             <div class="banner-text2">
                 <h4>Products Essentials</h4>
                 <h3>Bottle With Wooden Cork</h3>
                 <p>The Newtown sofa range is the first product Jonas Wagell has designed for Zaozuo, but one of the last to be finalized and launched.</p>
-                <p><a href="#">Buy now / <span>$196.98</span></a></p>
+                <a href="#"><span>Discover now</span></a>
             </div>
+
         </div>
         <!-- /.banner-outer -->
     </div>
 
     <div class="col-sm-6 col-md-6">
         <!-- .banner-img -->
-        <div class="banner-img">
-            <img src="images/cutemoew/bg-banner2.jpg" alt="about-img1" />
+        <div class="banner-img"  style="background-image: url({{ 'images/cutemoew/b10.jpg' }})">
             <div class="banner-text2">
                 <h4>Products Essentials</h4>
                 <h3>Hauteville Plywood Chair</h3>
                 <p>The Newtown sofa range is the first product Jonas Wagell has designed for Zaozuo, but one of the last to be finalized and launched.</p>
-                <a href="#">Buy now / <span>$196.98</span></a>
+                <a href="#"><span>Discover now</span></a>
             </div>
         </div>
         <!-- /.banner-outer -->
     </div>
     <!-- /.banner -->
+    </div>
 </section>
 @if(isset($promotionProducts) && count($promotionProducts)>0)
 <section class="new-arrivals">
     <!-- .new-arrivals -->
     <div class="container">
         <div class="tittle text-center">
-            <h2>Sale Off</h2>
+            <h2>Promotion Products</h2>
             <p>Mirum est notare quam littera gothica quam nunc putamus parum claram!</p>
         </div>
         <div class="row animated wow zoomIn" data-wow-duration=".5s" data-wow-delay=".2s">
@@ -164,27 +165,8 @@
     <!-- /.new-arrivals -->
 </section>
 @endif
-<section class="client-icon">
-    <div class="container">
-        <ul>
-            <li>
-                <a href="#"><img src="{{ asset('images/client-logo1.png') }}" alt="client-logo1" /></a>
-            </li>
-            <li>
-                <a href="#"><img src="{{ asset('images/client-logo2.png') }}" alt="client-logo2" /></a>
-            </li>
-            <li>
-                <a href="#" class="active"><img src="{{ asset('images/client-logo3.png') }}" alt="client-logo3" /></a>
-            </li>
-            <li>
-                <a href="#"><img src="{{ asset('images/client-logo4.png') }}" alt="client-logo4" /></a>
-            </li>
-            <li>
-                <a href="#"><img src="{{ asset('images/client-logo5.png') }}" alt="client-logo4" /></a>
-            </li>
-        </ul>
-    </div>
-</section>
+
+
 
 <section class="section-padding">
     <!-- Latest News -->

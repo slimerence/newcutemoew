@@ -5,7 +5,7 @@
         return;
     }
 
-    $images = $homeSlider->getImages();
+    $images = $homeSlider->getSliderImages();
 
     // 为了保持美观,所有的照片的尺寸,都要和第一张的一样,因此需要强制调整一下
     $ratio = null;
@@ -22,82 +22,34 @@
         }
     }
 ?>
-@if($agentObject->isPhone())
-    <div class="carousel carousel-animated carousel-animate-slide"
-         data-autoplay="true" data-delay="{{ $homeSlider->interval }}">
-        <div class='carousel-container'>
-            @foreach($images as $idx=>$image)
-                <div class='carousel-item has-background {{ $idx==0 ? 'is-active':null }}'>
-                    <img class="is-background" src="{{ $image->url }}" style="width: {{ $width }}; height: {{ $height }};" />
-                </div>
-            @endforeach
-        </div>
-        <div class="carousel-navigation {{ $homeSlider->overlay }}">
-            <div class="carousel-nav-left">
-                <i class="fa fa-chevron-left" aria-hidden="true"></i>
-            </div>
-            <div class="carousel-nav-right">
-                <i class="fa fa-chevron-right" aria-hidden="true"></i>
-            </div>
-        </div>
-    </div>
 
-@else
-    <div class="{{ $homeSlider->wrapper_classes }}">
-        <div class="carousel {{ $homeSlider->images_per_frame>1 ? 'is-'.$homeSlider->images_per_frame : null }} carousel-animated carousel-animate-slide"
-             data-autoplay="true" data-delay="{{ $homeSlider->interval }}">
-            <div class='carousel-container'>
-                @foreach($images as $idx=>$image)
-                    @if($homeSlider->images_per_frame>1)
-                        <div class='carousel-item {{ $idx==0 ? 'is-active':null }}' style="padding:5px;">
-                            <figure class="image {{ $ratio }}" style="margin: 0;">
-                                <img src="{{ $image->url }}" style="width: {{ $width }}px; height: {{ $height }}px;">
-                            </figure>
-                        </div>
-                    @else
-                        <div class='carousel-item has-background {{ $idx==0 ? 'is-active':null }}'>
-                            <img class="is-background" src="{{ $image->url }}" style="width: {{ $width }}; height: {{ $height }};" />
-                        </div>
-                    @endif
-                @endforeach
-            </div>
-            <div class="carousel-navigation {{ $homeSlider->overlay }}">
-                <div class="carousel-nav-left">
-                    <i class="fa fa-chevron-left" aria-hidden="true"></i>
-                </div>
-                <div class="carousel-nav-right">
-                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
-                </div>
-            </div>
-        </div>
-    </div>
-
-<div id="home-slider" class="carousel slide carousel-fade" data-ride="carousel">
-    <!-- .home-slider -->
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        @foreach($images as $idx=>$image)
+            <li data-target="#myCarousel" data-slide-to="{{ $idx }}" class="{{ $idx==0 ? 'active' : null }}"></li>
+        @endforeach
+    </ol>
+    <!-- Wrapper for slides -->
     <div class="carousel-inner">
-        <div class="item active" style="background: url({{ asset('images/cutemoew/slider1.jpg') }}) no-repeat top;">
-            <div class="caption">
-                <h2 class="animated wow zoomIn" data-wow-duration=".5s" data-wow-delay=".2s">Baby Clothing<br>Made By BEST Quality Cotton</h2>
-                <p class="animated wow fadeIn" data-wow-duration=".2s" data-wow-delay=".1s">If you are looking for fabulous baby clothing  or onesies in Australia, Cutemoew is the BEST place. </p> <a data-scroll class="btn get-start animated fadeInUpBig" href="#"><span>view collection</span></a> </div>
+        @foreach($images as $idx=>$image)
+        <div class="item {{ $idx==0 ? 'active' : null }}">
+            <a href="{{ $image->link_to }}"><img src="{{ $image->media->url }}" alt="gallery" style="width:100%; height:100%;"></a>
+            {{--<div class="carousel-caption">
+                <h3>Los Angeles</h3>
+                <p>LA is always so much fun!</p>
+            </div>--}}
         </div>
-        <div class="item" style="background: url({{ asset('images/cutemoew/slider4.jpg') }}) no-repeat top">
-            <div class="caption">
-                <h2 class="animated wow zoomIn" data-wow-duration=".5s" data-wow-delay=".2s">Baby Clothing<br>Every Baby is Worth the BEST</h2>
-                <p class="animated wow fadeIn" data-wow-duration=".2s" data-wow-delay=".1s"> Every baby is worth the best. Wish all the best wishes for your family.</p> <a data-scroll class="btn get-start animated fadeInUpBig" href="#"><span>view collection</span></a> </div>
-        </div>
-        <div class="item" style="background: url({{ asset('images/cutemoew/slider3.jpg') }}) no-repeat top">
-            <div class="caption">
-                <h2 class="animated wow zoomIn" data-wow-duration=".5s" data-wow-delay=".2s">Cutemoew<br>Baby Clothing Expert</h2>
-                <p class="animated wow fadeIn" data-wow-duration=".2s" data-wow-delay=".1s"> Please trust us, We know what baby's need and what is mommy's worrying. </p> <a data-scroll class="btn get-start animated fadeInUpBig" href="#"><span>view collection</span></a> </div>
-        </div>
-        <!-- indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#home-slider" data-slide-to="0" class="active"></li>
-            <li data-target="#home-slider" data-slide-to="1" class=""></li>
-            <li data-target="#home-slider" data-slide-to="2" class=""></li>
-        </ol>
-        <!-- /indicators -->
+        @endforeach
     </div>
-    <!-- /.home-slider -->
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+        <span class="sr-only">Next</span>
+    </a>
 </div>
-@endif

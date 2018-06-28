@@ -44,10 +44,10 @@
     <div class="copayright cwhite">
         <div class="container">
             <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
+                <div class="col-xs-12 col-sm-12 col-md-6">
                     Copyright &copy; <a href="{{ url('/') }}">Cutemoew</a> all rights reserved. Powered by <a href="https://www.webmelbourne.com/">Webmelbourne</a>
                 </div>
-                <div class="text-right col-xs-12 col-sm-6 col-md-6">
+                <div class="text-right col-xs-12 col-sm-12 col-md-6">
                     @if(isset($siteConfig))
                     <div class="f-sicon2">
                         <ul>

@@ -32,7 +32,7 @@
                         @endforeach
                     </ul>
                 </li>
-                <li> <a href="#" class="dropdown-toggle"><span>About</span></a> </li>
+                <li> <a href="{{ url('/about') }}" class="dropdown-toggle"><span>About</span></a> </li>
                 <li> <a href="{{ url('page/blog') }}"><span>Blog</span></a> </li>
                 <li> <a href="{{ url('/contact-us') }}"><span>Contact</span></a> </li>
             </ul>

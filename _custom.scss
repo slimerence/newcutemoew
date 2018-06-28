@@ -59,15 +59,43 @@ h1, h2, h3, p, a{
 
 .banner-bg{
   border-radius:1.5em;
+  margin-top:0;
 }
 
 .banner-img{
-  background-color: $bgcolor;
   text-align: center;
   border-radius:1.5em;
   box-shadow: 1px 1px 16px 0px #d8ccc4;
 }
+.banner-large{
+  .banner-img{
+    padding: 5em 1em 5em 1em;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .banner-text2 a{
+    float: none;
+  }
+}
 
+.banner-text2{
+  position: static;
+}
+@media (min-width: 1024px){
+  .carousel-inner>.item{
+    height:100vh;
+  }
+}
+@media (min-width: 768px){
+  .banner-text2{
+    width: 40%;
+  }
+}
+@media (max-width: 768px){
+  .banner-text2{
+    width: 100%;
+  }
+}
 .navbar-nav>li>.dropdown-menu {
   border-radius: 1.5em;
 }
@@ -122,7 +150,17 @@ img{
   #home-slider3 .carousel-indicators .active{
     height: 60px;
   }
+  .carousel-inner>.item {
+    height: 300px;
+  }
+  .carousel-indicators{
+    bottom:0;
+  }
+  .banner-cata{
+    display:none;
+  }
 }
+
 
 footer{
   background-color: $bgcolor;
@@ -155,6 +193,7 @@ footer{
     height: auto;
     transition: .5s ease;
     backface-visibility: hidden;
+    padding: 2em;
   }
   .banner-img:hover .banner-img{
     opacity: 0.3;
@@ -162,8 +201,15 @@ footer{
   .banner-img:hover .banner-text{
     opacity: 1;
   }
+  .banner-img{
+    background-color: #fcefe74d;
+  }
 }
-
+.banner-text2 a {
+  -webkit-border-radius: 1.5em;
+  -moz-border-radius: 1.5em;
+  border-radius: 1.5em;
+}
 .news-text .readbtn {
   border-radius: 1em;
   background-color: #fcefe7;
@@ -176,11 +222,7 @@ footer{
   font-family: inherit;
 }
 
-.banner-text2 a {
-  -webkit-border-radius: 1.5em;
-  -moz-border-radius: 1.5em;
-  border-radius: 1.5em;
-}
+
 .product-detail-bg{
   background:#fcefe747;
 }
@@ -395,4 +437,18 @@ footer{
 
 .el-form-item__label{
   width: 90px;
+}
+
+.carousel-control.left {
+  background-image: -webkit-linear-gradient(left, rgba(252, 239, 231, 0.78) 0%, rgba(0, 0, 0, .0001) 100%);
+  background-image:      -o-linear-gradient(left, rgba(252, 239, 231, 0.78) 0%, rgba(0, 0, 0, .0001) 100%);
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(252, 239, 231, 0.78)), to(rgba(0, 0, 0, .0001)));
+  background-image:         linear-gradient(to right, rgba(252, 239, 231, 0.78) 0%, rgba(0, 0, 0, .0001) 100%);
+
+}
+.carousel-control.right {
+  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, .0001) 0%, rgba(252, 239, 231, 0.78) 100%);
+  background-image:      -o-linear-gradient(left, rgba(0, 0, 0, .0001) 0%, rgba(252, 239, 231, 0.78) 100%);
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, .0001)), to(rgba(252, 239, 231, 0.78)));
+  background-image:         linear-gradient(to left, rgba(252, 239, 231, 0.78) 0,rgba(0,0,0,.0001) 100%);
 }
