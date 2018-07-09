@@ -92,12 +92,6 @@
                                 <!-- .pro-img -->
                                 <div class="pro-img"> <a href="{{ url('catalog/product/'.$product->uri) }}"><img src="{{ $product->getProductDefaultImageUrl() }}" alt="{{ $product->getProductName() }}"></a>
                                     <!-- .hover-img -->
-                                    <div class="hover-img">
-                                        <ul>
-                                            <li><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-                                            <li><a href="{{ url('catalog/product/'.$product->uri) }}"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-                                        </ul>
-                                    </div>
                                     <!--<div class="new tage"> <span class="new-text">NEW</span> <span class="pres-text">-15%</span> </div>-->
                                     @if($product->special_price)
                                         <div class="discount tage"> <span class="discount-text">SALE</span> </div>

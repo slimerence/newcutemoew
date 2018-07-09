@@ -142,7 +142,7 @@
                                 <ul>
                                     <li>Share:</li>
                                     @if(!empty($siteConfig->facebook))
-                                        <li><a href="{{ $siteConfig->facebook }}"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                        <li><a href="{{$siteConfig->facebook }}"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                                     @endif
                                     @if(!empty($siteConfig->twitter))
                                         <li><a href="{{ $siteConfig->twitter }}"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>

@@ -1,6 +1,3 @@
-
-$bgcolor: #FCEFE7;
-$lightcolor: #fcefe747;
 @import "cutemoew/assets/css/bootstrap-dropdownhover.min.css";
 @import "cutemoew/assets/simple-line-icon/css/simple-line-icons.css";
 @import "cutemoew/assets/css/animate.min.css";
@@ -9,7 +6,8 @@ $lightcolor: #fcefe747;
 @import "cutemoew/assets/css/baguetteBox.css";
 @import "cutemoew/assets/owl-carousel/owl.carousel.css";
 @import "cutemoew/assets/owl-carousel/owl.theme.css";
-
+$bgcolor:#FCEFE7;
+$lightcolor:#fcefe747;
 
 html,body{
   font-family: Helvetica;
@@ -411,6 +409,11 @@ footer{
     height:100%;
   }
 }
+.inner-header{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
 
 .checkbox input[type=checkbox] {
   position: relative;
@@ -451,4 +454,71 @@ footer{
   background-image:      -o-linear-gradient(left, rgba(0, 0, 0, .0001) 0%, rgba(252, 239, 231, 0.78) 100%);
   background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, .0001)), to(rgba(252, 239, 231, 0.78)));
   background-image:         linear-gradient(to left, rgba(252, 239, 231, 0.78) 0,rgba(0,0,0,.0001) 100%);
+}
+
+.grid-shop .pro-text{
+  display: table;
+}
+
+.hnews-title{
+  height: 3em;
+  overflow: hidden;
+  margin-bottom: 0;
+}
+
+.lbtn{
+  border-radius: 1.5em;
+}
+.news-text a{
+  height:50px;
+}
+
+.about-us{
+  border: 1px solid #fcefe7;
+  border-radius: 0.8em;
+  padding: 2em;
+  background-color: #fcefe717;
+  margin-top: 2em;
+  box-shadow: 1px 1px 20px 0px #fcefe7d6;
+}
+
+.bg-special{
+  background: $lightcolor;
+  color:#000000;
+}
+.w-100{
+  width: 100%;
+}
+.checkbox, .radio{
+  display: inline-block;
+}
+
+.box{
+  border: 1px solid #fcefe7;
+  border-radius: 0.8em;
+  padding: 2em;
+  background-color: #fcefe717;
+  box-shadow: 1px 1px 20px 0px #fcefe7d6;
+  margin-bottom:1em;
+}
+
+.note-text{
+  width: 100%;
+  -webkit-border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
+  border-radius: 0.5em;
+}
+
+#payment-form{
+  h3{
+    margin: 0 auto 10px 0;
+    font-size: 18px;
+  }
+}
+
+.stripe-form{
+  background-color: #fff;
+  .stripe-title{
+    margin-bottom: 1em;
+  }
 }

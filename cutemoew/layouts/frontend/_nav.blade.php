@@ -37,6 +37,12 @@
                 <li> <a href="{{ url('/contact-us') }}"><span>Contact</span></a> </li>
             </ul>
             <!-- /.navbar-collapse -->
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="{{ url('/view_cart') }}" class="dropbtn"> <img src="{{asset('images/top-icon3.png')}}" alt="top-ico3"> <span>Cart</span> </a>
+                </li>
+            </ul>
+
         </div>
     </div>
 </nav>

@@ -4,7 +4,7 @@
         <h2>News & Blog</h2>
         <div class="bdr">
             <ul>
-                <li>Home</li>
+                <li><a href="{{ url('/') }}">Home</a></li>
                 <li>/</li>
                 <li><span>Blog</span></li>
             </ul>
@@ -32,7 +32,7 @@
                     <div class="blog-social col-md-6"> <strong>Share to friends:</strong>
                         <ul class="social-list">
                             @if(!empty($siteConfig->facebook))
-                                <li class="box"><a href="{{ $siteConfig->facebook }}"><i class="fa fa-facebook"></i></a></li>
+                                <li class="box"><a href="{{ url($siteConfig->facebook) }}"><i class="fa fa-facebook"></i></a></li>
                             @endif
                             @if(!empty($siteConfig->twitter))
                                 <li class="box"><a href="{{ $siteConfig->twitter }}"><i class="fa fa-twitter"></i></a></li>

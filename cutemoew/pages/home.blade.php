@@ -47,7 +47,6 @@
     <div class="container">
         <div class="tittle text-center">
             <h2>Feature Products</h2>
-            <p>Mirum est notare quam littera gothica quam nunc putamus parum claram!</p>
         </div>
 
         <div class="row animated wow zoomIn" data-wow-duration=".5s" data-wow-delay=".2s">
@@ -127,7 +126,6 @@
     <div class="container">
         <div class="tittle text-center">
             <h2>Promotion Products</h2>
-            <p>Mirum est notare quam littera gothica quam nunc putamus parum claram!</p>
         </div>
         <div class="row animated wow zoomIn" data-wow-duration=".5s" data-wow-delay=".2s">
             @foreach($promotionProducts as $promotionProduct)
@@ -173,19 +171,21 @@
     <div class="container">
         <div class="tittle text-center">
             <h2>Our Blog Posts</h2>
-            <p>Mirum est notare quam littera gothica quam nunc putamus parum claram!</p>
         </div>
         @foreach($posts as $key=>$post)
+            @if($post->feature_image)
             <div class="col-sm-4 col-md-4 wow fadeIn" data-wow-duration=".2s" data-wow-delay=".1s">
                 <div class="news-box">
                     <div class="news-img">
                         <img src="{{$post->feature_image}}" alt="{{ $post->title }}" />
                     </div>
-                    <div class="news-text"> <a href="{{ url('/page'.$post->uri) }}">{{ $post->title }}</a>
+                    <div class="news-text">
+                        <a class="hnews-title" href="{{ url('/page'.$post->uri) }}">{{ $post->title }}</a>
                         <p>By <span>{{ $siteConfig->contact_person }}</span> / {{ $post->updated_at->format('F d, Y') }}</p>
                         <div class="news-text-content"> {!! $post->teasing !!}</div> <a href="{{ url('/page'.$post->uri) }}" class="readbtn">Read More</a> </div>
                 </div>
             </div>
+            @endif
         @endforeach
     </div>
     <!-- /Latest News -->

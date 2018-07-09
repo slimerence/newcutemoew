@@ -17,7 +17,7 @@
         <div class="content pt-40 mt-20" id="place-order-checkout-app">
         <div class="row">
             <div class="col-md-12">
-                <div class="box" style="width: 90%;margin: 0 auto;">
+                <div class="box">
                     <div class="card-body">
                         @if(isset($user) && $user)
                         <h4 class="is-size-4 has-text-link">Delivery Info: </h4>
@@ -107,14 +107,14 @@
                                     </div>
                                 </div>
                             </el-form>
-
                         <p class="is-small has-text-grey mt-20 has-text-centered">By proceeding, you agree to our Terms and Conditions and Privacy Policy</p>
                         @endif
                         <div class="is-clearfix"></div>
                     </div>
                 </div>
-
-                <div class="box mt-10" style="width: 90%;margin: 0 auto;">
+            </div>
+            <div class="col-md-6">
+                <div class="box mt-10">
                     <div class="card-body">
                         <h4 class="is-size-4 has-text-link">Order Summary:</h4>
                         <hr class="is-marginless">
@@ -133,7 +133,7 @@
                         <p class="columns is-marginless">
                             <span class="column">Total (GST Incl.):</span>
                             <?php
-                                $cartTotal = str_replace(',','',$cart->total());
+                            $cartTotal = str_replace(',','',$cart->total());
                             ?>
                             <span class="column"><b>{{ config('system.CURRENCY').' '.(number_format($cartTotal + $delivery_charge,2)) }}</b></span>
                         </p>
@@ -141,29 +141,21 @@
                         <div class="is-clearfix"></div>
                     </div>
                 </div>
-
             </div>
-            <div class="col-md-12 border-box">
+            <div class="col-md-6">
                 <form method="post" action="{{ url('/frontend/place_order_checkout') }}" id="payment-form">
                     {{ csrf_field() }}
                     <input type="hidden" name="payment_method" value="pm-place-order" id="payment-method-input">
                     @include(_get_frontend_theme_path('checkout.elements.payments'))
+
+                    <input type="hidden" name="{{ \App\Models\Utils\PaymentTool::STRIPE_TOKEN_INPUT_NAME }}" id="{{ \App\Models\Utils\PaymentTool::STRIPE_TOKEN_INPUT_ID }}">
                     <input type="hidden" name="customerUuid" v-model="customer">
-                    <div class="order-notes-wrap">
-                        <div class="field">
-                            <label class="label">My Notes</label>
-                            <textarea class="textarea" name="notes" placeholder="Please leave your notes here ..." rows="3"></textarea>
-                        </div>
+                    <div class="box">
+                    <h3>My Notes</h3>
+                    <textarea class="textarea note-text" name="notes" placeholder="Please leave your notes here ..." rows="3"></textarea>
+                    <input required type="checkbox" name="agree" class="checkbox" checked>
+                    I agree to <a target="_blank" class="hyperlink" href="{{ url('/frontend/content/view/terms') }}">Terms and Conditions</a> and <a target="_blank" class="hyperlink" href="{{ url('/frontend/content/view/privacy-policy') }}">Privacy Policy</a>
                     </div>
-
-                    <div class="field mt-10">
-                        <label class="label">
-                            <input required type="checkbox" name="agree" class="checkbox" checked>
-                            I agree to
-                            <a target="_blank" class="hyperlink" href="{{ url('/frontend/content/view/terms') }}">Terms and Conditions</a> and <a target="_blank" class="hyperlink" href="{{ url('/frontend/content/view/privacy-policy') }}">Privacy Policy</a>
-                        </label>
-                    </div>
-
                     <el-button type="primary" native-type="submit"
                         :disabled="customer.length==0"
                     >Submit Order Now</el-button>

@@ -45,6 +45,8 @@ Vue.use(ElementUI);
 // 导入子定义的 vue js editor组件
 Vue.component('CatalogViewer', require('../../../assets/js/components/catalog-viewer/catalogviewer.vue'));
 Vue.component('VuejsSlider', require('../../../assets/js/components/vuejs-slider/VuejsSlider.vue'));
+Vue.component('StripePayment', require('../../../assets/js/components/payments/stripe/StripePayment.vue'));
+
 
 fastclick.attach(document.body);
 

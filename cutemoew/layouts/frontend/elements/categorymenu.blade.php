@@ -2,7 +2,7 @@
     <div class="panel panel-default">
         <div class="panel-heading">
             <h4 class="panel-title">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="{{ '#col'.$item->id }}">
+                <a class="accordion-toggle" href="{{ url('category/view/'.$item->uri) }}">
                     {{$item->name}}
                 </a><i class="indicator fa fa-angle-right pull-right"></i>
             </h4>
@@ -11,7 +11,7 @@
         $subchild = $sub['subs'];
         ?>
         @if(count($sub['subs'])>0 || count($sub['products']) > 0)
-            <div id="{{ 'col'.$item->id }}" class="panel-collapse collapse">
+            <div id="{{ 'col'.$item->id }}" class="panel-collapse">
                 <div class="panel-body">
                     <div class="product-categories">
                         <ul>
