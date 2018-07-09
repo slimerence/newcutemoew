@@ -34,7 +34,6 @@ require('!style-loader!css-loader!photoswipe/dist/photoswipe.css');
 require('!style-loader!css-loader!photoswipe/dist/default-skin/default-skin.css');
 import 'photoswipe';
 
-
 window.Vue = require('vue');
 // 加载Element UI 库
 import ElementUI from 'element-ui';
@@ -46,7 +45,6 @@ Vue.use(ElementUI);
 Vue.component('CatalogViewer', require('../../../assets/js/components/catalog-viewer/catalogviewer.vue'));
 Vue.component('VuejsSlider', require('../../../assets/js/components/vuejs-slider/VuejsSlider.vue'));
 Vue.component('StripePayment', require('../../../assets/js/components/payments/stripe/StripePayment.vue'));
-
 
 fastclick.attach(document.body);
 

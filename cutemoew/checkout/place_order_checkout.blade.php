@@ -109,7 +109,6 @@
                             </el-form>
                         <p class="is-small has-text-grey mt-20 has-text-centered">By proceeding, you agree to our Terms and Conditions and Privacy Policy</p>
                         @endif
-                        <div class="is-clearfix"></div>
                     </div>
                 </div>
             </div>
@@ -137,7 +136,7 @@
                             ?>
                             <span class="column"><b>{{ config('system.CURRENCY').' '.(number_format($cartTotal + $delivery_charge,2)) }}</b></span>
                         </p>
-                        <a href="{{ url('/view_cart') }}" class="button is-info is-pulled-right"><i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;Details</a>
+                        <a href="{{ url('/view_cart') }}" class="button"><i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;Details</a>
                         <div class="is-clearfix"></div>
                     </div>
                 </div>

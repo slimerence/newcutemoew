@@ -90,7 +90,7 @@
                             <!-- .pro-text -->
                             <div class="pro-text">
                                 <!-- .pro-img -->
-                                <div class="pro-img"> <a href="{{ url('catalog/product/'.$product->uri) }}"><img src="{{ $product->getProductDefaultImageUrl() }}" alt="{{ $product->getProductName() }}"></a>
+                                <div class="pro-img"> <a href="{{ url('catalog/product/'.$product->uri) }}" style="height: 50px; overflow: hidden;"><img src="{{ $product->getProductDefaultImageUrl() }}" alt="{{ $product->getProductName() }}"></a>
                                     <!-- .hover-img -->
                                     <!--<div class="new tage"> <span class="new-text">NEW</span> <span class="pres-text">-15%</span> </div>-->
                                     @if($product->special_price)

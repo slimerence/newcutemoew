@@ -4,7 +4,7 @@
         <h2>Shop Categories</h2>
         <div class="bdr">
             <ul>
-                <li>Home</li>
+                <li><a href="{{ url('/') }}">Home</a></li>
                 <li>/</li>
                 <li><span>Shop  Categories</span></li>
             </ul>
@@ -92,13 +92,13 @@
                 </el-table>
             </div>
         </div>
-        <div class="columns checkout-bar">
-            <div class="column">
+        <div class="row checkout-bar text-center">
+            <div class="col-md-6 col-xs-12">
                 <p class="total-txt has-text-right">
                     {{ trans('cart.Total') }}: @{{ cartTotalText }}
                 </p>
             </div>
-            <div class="column">
+            <div class="col-md-6 col-xs-12">
                 <el-button type="primary" size="large" v-on:click="checkout">
                     <i class="fa fa-credit-card" aria-hidden="true"></i>&nbsp;{{ trans('cart.Checkout') }} <i class="el-icon-arrow-right el-icon--right"></i>
                 </el-button>

@@ -63,18 +63,7 @@
                                     @if($product->manage_stock && $product->stock<$product->min_quantity)
                                         <span class="badge badge-pill badge-danger">Out of Stock</span>
                                     @endif</h4>
-                            <!--
-                            <div class="star2">
-                                <ul>
-                                    <li class="red-color"><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li class="red-color"><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li class="red-color"><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><a href="#">10 review(s)</a></li>
-                                    <li><a href="#"> Add your review</a></li>
-                                </ul>
-                            </div>-->
+
                             <p class="sku-txt">SKU: {{ $product->sku }}</p>
                             @if($product->special_price)
                                 <p class="price-detail">${{ $product->getSpecialPriceGST() }}<span>${{ $product->getDefaultPriceGST() }}</span></p>

@@ -32,15 +32,13 @@
                         @endforeach
                     </ul>
                 </li>
-                <li> <a href="{{ url('/about') }}" class="dropdown-toggle"><span>About</span></a> </li>
+                <li> <a href="{{ url('/aboutpage') }}" class="dropdown-toggle"><span>About</span></a> </li>
                 <li> <a href="{{ url('page/blog') }}"><span>Blog</span></a> </li>
                 <li> <a href="{{ url('/contact-us') }}"><span>Contact</span></a> </li>
             </ul>
             <!-- /.navbar-collapse -->
             <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown">
-                    <a href="{{ url('/view_cart') }}" class="dropbtn"> <img src="{{asset('images/top-icon3.png')}}" alt="top-ico3"> <span>Cart</span> </a>
-                </li>
+               <li> <a href="{{ url('/view_cart') }}"> <img src="{{asset('images/top-icon3.png')}}" alt="top-ico3"> <span> View Cart</span> </a></li>
             </ul>
 
         </div>
