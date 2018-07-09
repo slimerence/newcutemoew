@@ -90,7 +90,7 @@
                             <!-- .pro-text -->
                             <div class="pro-text">
                                 <!-- .pro-img -->
-                                <div class="pro-img"> <a href="{{ url('catalog/product/'.$product->uri) }}" style="height: 50px; overflow: hidden;"><img src="{{ $product->getProductDefaultImageUrl() }}" alt="{{ $product->getProductName() }}"></a>
+                                <div class="pro-img"> <a href="{{ url('catalog/product/'.$product->uri) }}"><img src="{{ $product->getProductDefaultImageUrl() }}" alt="{{ $product->getProductName() }}"></a>
                                     <!-- .hover-img -->
                                     <!--<div class="new tage"> <span class="new-text">NEW</span> <span class="pres-text">-15%</span> </div>-->
                                     @if($product->special_price)
@@ -98,7 +98,7 @@
                                     @endif
                                     <!-- /.hover-img -->
                                 </div>
-                                <!-- /.pro-img --><a href="{{ url('catalog/product/'.$product->uri) }}">{{ $product->getProductName() }}</a> <a href="{{ url('catalog/product/'.$product->uri) }}" class="addtocart">+ Add to cart</a>
+                                <!-- /.pro-img --><a href="{{ url('catalog/product/'.$product->uri) }}" style="height: 50px; overflow: hidden;">{{ $product->getProductName() }}</a> <a href="{{ url('catalog/product/'.$product->uri) }}" class="addtocart">+ Add to cart</a>
                                 <div class="price">
                                         <span style="{{ !empty($product->special_price) ? 'text-decoration: line-through;' : 'text-decoration:none;' }}">${{ $product->getDefaultPriceGST() }}</span>
                                     @if($product->special_price)
