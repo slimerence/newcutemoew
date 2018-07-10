@@ -215,7 +215,7 @@ footer{
 
 .news-text .readbtn:hover {
   border: 2px solid #fcefe7;
-  color: #3d3735;
+  color: #d6d4d4;
   background: #ffffff;
   font-family: inherit;
 }
@@ -538,7 +538,11 @@ footer{
   border: 1px solid #fcefe7;
   display: block;
   line-height: 3em;
+  &:active,&:focus{
+    text-decoration: none;
+  }
 }
+
 
 .confirm{
   background-color: $bgcolor;
@@ -555,7 +559,11 @@ footer{
   }
   input{
     border-radius: 0.3em;
-    border: 1px solid #3d3735;
+    border: 1px solid #d6d4d4;
+    padding:0 0.5em;
+    &:focus{
+      border-radius: 0.3em;
+    }
   }
 }
 
@@ -565,6 +573,12 @@ footer{
 .mb{
   margin-bottom: 20px;
 }
+.is-danger{
+  color:red;
+  a{
+    color: red;
+  }
+}
 
 .register-form{
   .label{
@@ -573,18 +587,17 @@ footer{
     color: #0a0a0a;
     padding: 0;
     font-size: 1em;
-    margin: 1em 0 0.5em 0;
+    margin: 1em 0 0.3em 0;
   }
   input{
     width: 100%;
     border-radius: 0.3em;
-    border: 1px solid #3d3735;
-    padding:0 0.5em;
+    border: 1px solid #d6d4d4;
+    padding:0 0.3em;
   }
-
   select{
     border-radius: 0.3em;
-    border: 1px solid #3d3735;
+    border: 1px solid #d6d4d4;
   }
 }
 
@@ -592,4 +605,13 @@ footer{
   span{
     color:red;
   }
+}
+.select{
+  display: inline-block;
+  border: 1px solid #d6d4d4;
+  width: 100%;
+}
+.form-field{
+  margin-top:1em;
+
 }

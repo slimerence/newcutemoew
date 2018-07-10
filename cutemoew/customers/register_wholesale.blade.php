@@ -191,12 +191,12 @@
                 <div class="field">
                     <div class="control">
                         <label class="checkbox">
-                            <input type="checkbox" checked name="subscribe_me"> Subscribe {{ str_replace('_',' ',env('APP_NAME','Laravel')) }} Newsletter
+                            <input type="checkbox" checked name="subscribe_me" style="width: auto;"> Subscribe {{ str_replace('_',' ',env('APP_NAME','Laravel')) }} Newsletter
                         </label>
                     </div>
                 </div>
 
-                <button type="submit" id="general-customer-register-btn" class="customer-btn confirm"">
+                <button type="submit" id="general-customer-register-btn" class="customer-btn confirm">
                     <i class="fa fa-spinner fa-spin fa-fw is-invisible" id="checkingEmailIcon"></i>Submit to Register&nbsp;&nbsp;&nbsp;&nbsp;
                 </button>
             </form>

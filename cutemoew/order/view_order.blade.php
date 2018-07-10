@@ -12,10 +12,10 @@
     </div>
 @endsection
 @section('content')
-    <div class="container pt-40 pl-20 pr-20" id="view-orders-manager-app">
+    <div class="container" id="view-orders-manager-app">
         <div class="box">
             <div class="col is-pulled-left">
-                <h4 class="is-size-4">
+                <h4>
                     Order #: {{ $order->serial_number }} {!! \App\Models\Utils\OrderStatus::GetName($order->status) !!}
                 </h4>
             </div>

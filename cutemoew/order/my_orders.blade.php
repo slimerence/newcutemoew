@@ -1,7 +1,7 @@
 @extends(_get_frontend_layout_path('catalog'))
 @section('topbar')
     <div class="inner-header" style="background: url({{ asset('images/cutemoew/slideshow_1.jpg') }});">
-        <h2>Customer</h2>
+        <h2>Customer Service</h2>
         <div class="bdr">
             <ul>
                 <li><a href="{{ url('/') }}">Home</a></li>
