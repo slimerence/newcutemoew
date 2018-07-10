@@ -6,7 +6,7 @@
             <ul>
                 <li><a href="{{ url('/') }}">Home</a></li>
                 <li>/</li>
-                <li><span>Shop  Categories</span></li>
+                <li><span>View Cart</span></li>
             </ul>
         </div>
     </div>

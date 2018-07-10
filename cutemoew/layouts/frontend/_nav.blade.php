@@ -32,13 +32,28 @@
                         @endforeach
                     </ul>
                 </li>
-                <li> <a href="{{ url('/aboutpage') }}" class="dropdown-toggle"><span>About</span></a> </li>
+                <li> <a href="{{ url('/about') }}" class="dropdown-toggle"><span>About</span></a> </li>
                 <li> <a href="{{ url('page/blog') }}"><span>Blog</span></a> </li>
                 <li> <a href="{{ url('/contact-us') }}"><span>Contact</span></a> </li>
             </ul>
             <!-- /.navbar-collapse -->
             <ul class="nav navbar-nav navbar-right">
+                @if(!session('user_data.id'))
+                    <li> <a href="{{ url('frontend/customers/login') }}"><i class="fa fa-sign-in" aria-hidden="true"></i><span> Login</span></a></li>
+                    <li> <a href="{{ url('frontend/customers/register') }}"><i class="fa fa-user" aria-hidden="true"></i></i><span> Register</span></a></li>
+                @else
+                    <li> <a href="{{ url('frontend/my_orders/'.session('user_data.uuid')) }}"><i class="fa fa-wpforms" aria-hidden="true"></i><span> My Orders</span></a></li>
+                    <li> <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                            <i class="fa fa-sign-out" aria-hidden="true"></i></i>
+                            <span> Logout</span>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
+                                @csrf
+                            </form>
+                        </a>
+                    </li>
+                @endif
                <li> <a href="{{ url('/view_cart') }}"> <img src="{{asset('images/top-icon3.png')}}" alt="top-ico3"> <span> View Cart</span> </a></li>
+
             </ul>
 
         </div>

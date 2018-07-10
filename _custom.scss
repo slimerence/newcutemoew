@@ -529,3 +529,67 @@ footer{
 .checkout-bar{
   margin-bottom: 2em;
 }
+
+.customer-btn{
+  height: 3em;
+  width: 100%;
+  border-radius: 0.5em;
+  box-shadow: 1px 1px 8px #fcefe7;
+  border: 1px solid #fcefe7;
+  display: block;
+  line-height: 3em;
+}
+
+.confirm{
+  background-color: $bgcolor;
+}
+.cancel{
+  background-color: #ffffff;
+}
+.content-detail-wrap{
+  .label{
+    color: #000;
+    padding: 0;
+    font-size: 1em;
+    margin: 1em 0 0.5em 0;
+  }
+  input{
+    border-radius: 0.3em;
+    border: 1px solid #3d3735;
+  }
+}
+
+.mt{
+  margin-top:20px;
+}
+.mb{
+  margin-bottom: 20px;
+}
+
+.register-form{
+  .label{
+    display:block;
+    text-align: left;
+    color: #0a0a0a;
+    padding: 0;
+    font-size: 1em;
+    margin: 1em 0 0.5em 0;
+  }
+  input{
+    width: 100%;
+    border-radius: 0.3em;
+    border: 1px solid #3d3735;
+    padding:0 0.5em;
+  }
+
+  select{
+    border-radius: 0.3em;
+    border: 1px solid #3d3735;
+  }
+}
+
+.help{
+  span{
+    color:red;
+  }
+}
