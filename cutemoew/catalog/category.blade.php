@@ -72,7 +72,7 @@
                         foreach ($productsChunk as $row) {
                         ?>
                             @foreach($row as $key=>$product)
-                                <div class="col-md-4">
+                            <div class="col-md-4 col-sm-6 col-xs-12">
                             <!-- .pro-text -->
                             <div class="pro-text">
                                 <div class="pro-img"> <a href="{{ url('catalog/product/'.$product->uri) }}"><img src="{{ $product->getProductDefaultImageUrl() }}" alt="{{ $product->getProductName() }}"></a>

@@ -2,44 +2,63 @@
 
 @section('content')
 <section class="banner-outer banner-cata">
-    <!-- .banner-outer -->
+
+    <!-- /.banner -->
     <div class="container">
-        <!-- .banner-bg -->
-        <div class="banner-bg">
-            <div class="col-sm-4 col-md-4 imgct">
-                <!-- .banner-img -->
-                <div class="banner-img animated wow zoomIn" data-wow-duration=".5s" data-wow-delay=".2s"> <img src="images/cutemoew/products/cata1.png" alt="about-img1" />
-                    <div class="banner-text">
-                        <h3>British Made Pocket Knife - Oak</h3>
-                        <p><a href="#">Discover Now</a></p>
-                    </div>
+        <div class="row newbanner">
+            <div class="col-md-6">
+                <div class="animated wow zoomIn banner-container" data-wow-duration=".5s" data-wow-delay=".2s">
+                    <a href="{{ url('/category/view/Sales') }}">
+                    <img src="{{ asset('images/cutemoew/products/cata1.jpg') }}" alt="catact" />
+                    </a>
                 </div>
-                <!-- /.banner-outer -->
             </div>
-            <div class="col-sm-4 col-md-4 imgct">
-                <!-- .banner-img -->
-                <div class="banner-img animated wow zoomIn" data-wow-duration=".5s" data-wow-delay=".2s"> <img src="images/cutemoew/products/cata2.png" alt="about-img1" />
-                    <div class="banner-text">
-                        <h3>Chair Kimi No Isu Project</h3>
-                        <p><a href="#">Discover Now</a></p>
+            <div class="col-md-6">
+                <div class="row child-row">
+                    <div class="child-col col-md-6">
+                        <div class="animated wow zoomIn banner-container" data-wow-duration=".5s" data-wow-delay=".2s">
+                            <a href="{{ url('/category/view/summer') }}">
+                            <img src="{{ asset('images/cutemoew/products/cata2.jpg') }}" alt="catact1" />
+                            <div class="banner-text">
+                                <h4>Summer</h4>
+                            </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="child-col col-md-6">
+                        <div class="animated wow zoomIn banner-container" data-wow-duration=".5s" data-wow-delay=".2s">
+                            <a href="{{ url('/category/view/winter') }}">
+                            <img src="{{ asset('images/cutemoew/products/cata3.jpg') }}" alt="catact2" />
+                            <div class="banner-text">
+                                <h4>Winter</h4>
+                            </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="child-col col-md-6">
+                        <div class="animated wow zoomIn banner-container" data-wow-duration=".5s" data-wow-delay=".2s">
+                            <a href="{{ url('/category/view/springautumn') }}">
+                            <img src="{{ asset('images/cutemoew/products/cata4.jpg') }}" alt="catact3" />
+                            <div class="banner-text">
+                                <h4>Spring & Autumn</h4>
+                            </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="child-col col-md-6">
+                        <div class="animated wow zoomIn banner-container" data-wow-duration=".5s" data-wow-delay=".2s">
+                            <a href="{{ url('/category/view/Accessories') }}">
+                            <img src="{{ asset('images/cutemoew/products/cata5.jpg') }}" alt="catact4" />
+                            <div class="banner-text">
+                                <h4>Accessories</h4>
+                            </div>
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <!-- /.banner-outer -->
-            </div>
-            <div class="col-sm-4 col-md-4 animated wow zoomIn imgct" data-wow-duration=".5s" data-wow-delay=".2s">
-                <!-- .banner-img -->
-                <div class="banner-img"> <img src="images/cutemoew/products/cata3.png" alt="about-img1" />
-                    <div class="banner-text">
-                        <h3>Merino Lambswool Scarf Moss</h3>
-                        <p><a href="#">Discover Now</a></p>
-                    </div>
-                </div>
-                <!-- /.banner-outer -->
             </div>
         </div>
-        <!-- /.banner-bg -->
     </div>
-    <!-- /.banner -->
 </section>
 @if($featureProducts)
 <section class="new-arrivals">
@@ -55,14 +74,13 @@
                 <!-- .pro-text -->
                 <div class="pro-text">
                     <!-- .pro-img -->
-                    <div class="pro-img"> <img src="{{ $featureProduct->getProductDefaultImageUrl() }}" alt="{{ $featureProduct->name }}">
+                    <div class="pro-img"> <a href="{{ url('catalog/product/'.$featureProduct->uri) }}"><img src="{{ $featureProduct->getProductDefaultImageUrl() }}" alt="{{ $featureProduct->name }}"></a>
                         <!-- .hover-img -->
-                        <div class="hover-img">
+{{--                        <div class="hover-img">
                             <ul>
-                                <li><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
                                 <li><a href="{{ url('catalog/product/'.$featureProduct->uri) }}"><i class="fa fa-search" aria-hidden="true"></i></a></li>
                             </ul>
-                        </div>
+                        </div>--}}
                         <!--<div class="new tage"> <span class="new-text">NEW</span> <span class="pres-text">-15%</span> </div>-->
                         @if($featureProduct->special_price)
                             <div class="discount tage"> <span class="discount-text">SALE</span> </div>
@@ -71,7 +89,7 @@
                     </div>
                     <!-- /.pro-img --><a href="{{ url('catalog/product/'.$featureProduct->uri) }}">{{ $featureProduct->name }}</a> <a href="{{ url('catalog/product/'.$featureProduct->uri) }}" class="addtocart">+ Add to cart</a>
                     <div class="price">
-                        <span style="{{ $featureProduct->special_price ? 'text-decoration: line-through;' : '' }}">${{ $featureProduct->getDefaultPriceGST() }}</span>
+                        <span style="{{ $featureProduct->special_price ? 'text-decoration: line-through;' : 'text-decoration: none;' }}">${{ $featureProduct->getDefaultPriceGST() }}</span>
                         @if($featureProduct->special_price)
                             <span style="color: red;text-decoration: none;">${{ $featureProduct->getSpecialPriceGST() }}</span>
                         @endif
@@ -80,7 +98,7 @@
             </div>
             @endforeach
             <div class="col-md-12 text-center">
-                <a href="#" class="lbtn">load more</a>
+                <a href="{{ url('/category/view/Sales') }}" class="lbtn">load more</a>
             </div>
         </div>
 
@@ -89,16 +107,16 @@
 </section>
 @endif
 <section class="banner-outer banner-large">
-    <div class="row" style="margin: 0 2em">
+    <div class="container">
+    <div class="row">
     <!-- .banner-outer -->
     <div class="col-sm-6 col-md-6">
         <!-- .banner-img -->
-        <div class="banner-img" style="background-image: url({{ 'images/cutemoew/b9.jpg' }})">
+        <div class="banner-img" style="background-image: url({{ 'images/cutemoew/banner1.jpg' }})">
             <div class="banner-text2">
-                <h4>Products Essentials</h4>
-                <h3>Bottle With Wooden Cork</h3>
-                <p>The Newtown sofa range is the first product Jonas Wagell has designed for Zaozuo, but one of the last to be finalized and launched.</p>
-                <a href="#"><span>Discover now</span></a>
+                <h3>Best Sales Every Day</h3>
+                <p></p>
+                <a href="{{ url('/category/view/Sales') }}"><span>Discover now</span></a>
             </div>
 
         </div>
@@ -107,17 +125,17 @@
 
     <div class="col-sm-6 col-md-6">
         <!-- .banner-img -->
-        <div class="banner-img"  style="background-image: url({{ 'images/cutemoew/b10.jpg' }})">
+        <div class="banner-img"  style="background-image: url({{ 'images/cutemoew/banner2.jpg' }})">
             <div class="banner-text2">
-                <h4>Products Essentials</h4>
-                <h3>Hauteville Plywood Chair</h3>
-                <p>The Newtown sofa range is the first product Jonas Wagell has designed for Zaozuo, but one of the last to be finalized and launched.</p>
-                <a href="#"><span>Discover now</span></a>
+                <h3>Baby Accessories</h3>
+                <p></p>
+                <a href="{{ url('category/view/Accessories') }}"><span>Discover now</span></a>
             </div>
         </div>
         <!-- /.banner-outer -->
     </div>
     <!-- /.banner -->
+    </div>
     </div>
 </section>
 @if(isset($promotionProducts) && count($promotionProducts)>0)
@@ -129,7 +147,7 @@
         </div>
         <div class="row animated wow zoomIn" data-wow-duration=".5s" data-wow-delay=".2s">
             @foreach($promotionProducts as $promotionProduct)
-            <div class="col-5">
+            <div class="col-md-3">
                 <!-- .pro-text -->
                 <div class="pro-text">
                     <!-- .pro-img -->
@@ -148,7 +166,7 @@
                     </div>
                     <!-- /.pro-img --><a href="{{ url('catalog/product/'.$promotionProduct->uri) }}">{{ $promotionProduct->name }}</a> <a href="{{ url('catalog/product/'.$promotionProduct->uri) }}" class="addtocart">+ Add to cart</a>
                     <div class="price">
-                        <span style="{{ $promotionProduct->special_price ? 'text-decoration: line-through;' : '' }}">${{ $promotionProduct->getDefaultPriceGST() }}</span>
+                        <span style="{{ $promotionProduct->special_price ? 'text-decoration: line-through;' : 'text-decoration: none' }}">${{ $promotionProduct->getDefaultPriceGST() }}</span>
                         @if($promotionProduct->special_price)
                             <span style="color: red;text-decoration: none;">${{ $promotionProduct->getSpecialPriceGST() }}</span>
                         @endif
