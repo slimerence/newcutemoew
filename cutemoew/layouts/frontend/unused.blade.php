@@ -227,3 +227,19 @@
 
 @endforeach
 
+<div class="weight">
+    <div class="title">
+        <h2>filter by price</h2>
+    </div>
+    <!-- Bootstrap Pricing Slider by ZsharE -->
+    <div class="button-slider">
+        <div class="btn-group">
+            <div class="btn btn-default">
+                <input id="bootstrap-slider" type="text" data-slider-min="1" data-slider-max="500" data-slider-step="1" data-slider-value="50" />
+                <div class="valueLabelblck">Filter</div>
+                <div class="valueLabel">$<span id="sliderValue">50</span></div>
+                <div class="valueLabel">$<span id="sliderValue2">500</span></div>
+            </div>
+        </div>
+    </div>
+</div>

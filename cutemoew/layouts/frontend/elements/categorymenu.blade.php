@@ -16,7 +16,7 @@
                     <div class="product-categories">
                         <ul>
                             @foreach($subchild as $subnav)
-                                <li><a href="{{ url('category/view/'.$subnav['uri'] )}}">{{$subnav['name']}} ({{count($sub['products'])}})</a></li>
+                                <li><a href="{{ url('category/view/'.$subnav['uri'] )}}">{{$subnav['name']}} {{--({{count($sub['products'])}})--}}</a></li>
                             @endforeach
                         </ul>
                     </div>
