@@ -119,14 +119,20 @@
                                         @endif
                                     @endif
                                 </div>
-                            <a href="#" class="hart"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                            <a href="#" class="hart"><i class="fa fa-sliders" aria-hidden="true"></i></a>
                             </form>
                             <!--tag area-->
+
+                            @if(count($tags)>0)
                             <div class="tag">
-                                <p>Categories: <span>Bags, Blazers, Boots, Jackets, Pants, Shirts.</span></p>
-                                <p>Tag: <span>outerwear.</span></p>
+                                {{--<p>Categories: <span>Bags, Blazers, Boots, Jackets, Pants, Shirts.</span></p>--}}
+                                <p>Tag: <span>
+                                        @foreach($tags as $tag)
+                                            {{ $tag->name }} |
+                                        @endforeach
+                                    </span>
+                                </p>
                             </div>
+                            @endif
                             <div class="share">
                                 <ul>
                                     <li>Share:</li>
@@ -229,8 +235,8 @@
                                 <!-- .hover-img -->
                                 <div class="hover-img">
                                     <ul>
-                                        <li><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-sliders" aria-hidden="true"></i></a></li>
+                                        {{--<li><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-sliders" aria-hidden="true"></i></a></li>--}}
                                         <li><a href="{{ url('catalog/product/'.$rp->uri) }}"><i class="fa fa-search" aria-hidden="true"></i></a></li>
                                     </ul>
                                 </div>

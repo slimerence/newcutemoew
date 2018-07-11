@@ -37,7 +37,7 @@
 
                     <div class="content-detail-wrap">
                         <div class="content-line">
-                            <label><i class="fa fa-map-signs has-text-danger"></i></label>
+                            <label><i class="fa fa-map-signs has-text-danger" style="color: red"></i></label>
                             <label class="value">{{ $user->addressText() }}</label>
                         </div>
                     </div>
