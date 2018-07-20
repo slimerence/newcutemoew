@@ -6,7 +6,7 @@
         <form method="post" action="{{ url('frontend/customers/login') }}">
             {{ csrf_field() }}
             <input type="hidden" name="the_referer" value="{{ $the_referer }}">
-            <div class="field">
+            <div class="field mt">
                 <label class="label">Account #</label>
                 <div class="control">
                     <input type="text" class="input w-100" name="email" placeholder="Account #">
@@ -15,7 +15,7 @@
                     <p class="help is-danger">{{ $errors->first('email') }}</p>
                 @endif
             </div>
-            <div class="field">
+            <div class="field mt">
                 <label class="label">Password</label>
                 <div class="control">
                     <input type="password" class="input w-100" name="password" placeholder="Password">

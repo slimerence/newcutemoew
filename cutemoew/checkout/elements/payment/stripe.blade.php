@@ -13,6 +13,6 @@
     :need-emit="true"
     v-on:stripe-token-success="stripeTokenSuccessHandler"
 ></stripe-payment>
-<input type="hidden" name="{{ \App\Models\Utils\PaymentTool::STRIPE_TOKEN_INPUT_NAME }}" id="{{ \App\Models\Utils\PaymentTool::STRIPE_TOKEN_INPUT_ID }}">
+<input type="hidden" name="{{ \App\Models\Utils\PaymentTool::STRIPE_TOKEN_INPUT_NAME }}" id="{{ \App\Models\Utils\PaymentTool::STRIPE_TOKEN_INPUT_ID }}" value="{{ $paymentMethod->getApiToken() }}">
 </div>
 </div>

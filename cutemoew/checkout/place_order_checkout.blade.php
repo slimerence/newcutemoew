@@ -91,7 +91,7 @@
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-md-6 text-center">
                                         <el-form-item>
                                             <el-button type="primary"
                                                 @click="submitForm('shippingForm')"
@@ -100,10 +100,10 @@
                                             >CONTINUE TO BILLING</el-button>
                                         </el-form-item>
                                     </div>
-                                    <div class="col-md-6">
-                                        <el-form-item>
-                                            <el-button type="success" @click="login()" :disabled="customer.length>0">CUSTOMER LOGIN</el-button>
-                                        </el-form-item>
+                                    <div class="col-md-6 text-center">
+                                        <div class="el-button" style="background-color: #FCEFE7;">
+                                            <a href="{{ url('frontend/customers/login') }}">CUSTOMER LOGIN</a>
+                                        </div>
                                     </div>
                                 </div>
                             </el-form>
@@ -146,8 +146,6 @@
                     {{ csrf_field() }}
                     <input type="hidden" name="payment_method" value="pm-stripe" id="payment-method-input">
                     @include(_get_frontend_theme_path('checkout.elements.payments'))
-
-                    <input type="hidden" name="{{ \App\Models\Utils\PaymentTool::STRIPE_TOKEN_INPUT_NAME }}" id="{{ \App\Models\Utils\PaymentTool::STRIPE_TOKEN_INPUT_ID }}">
                     <input type="hidden" name="customerUuid" v-model="customer">
                     <div class="box">
                     <h3>My Notes</h3>
