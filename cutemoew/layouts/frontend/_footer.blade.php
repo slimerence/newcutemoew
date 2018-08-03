@@ -20,7 +20,7 @@
                     <h4>Information</h4>
                     <ul>
                         <li><a href="{{ url('/') }}">Home</a></li>
-                        <li><a href="{{ url('/about-us') }}">About Us</a></li>
+                        <li><a href="{{ url('/about') }}">About Us</a></li>
                         <li><a href="{{ url('/contact-us') }}">Contact </a></li>
                         <li><a href="{{ url('/page/blog') }}">Blog</a></li>
                     </ul>
