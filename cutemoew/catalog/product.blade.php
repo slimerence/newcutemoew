@@ -59,10 +59,10 @@
                         <!-- .pro-text -->
                         <div class="pro-text product-detail">
                             <!-- /.pro-img -->
-                                <h4>{{ $product->getProductName() }}&nbsp;
+                                <h1>{{ $product->getProductName() }}&nbsp;
                                     @if($product->manage_stock && $product->stock<$product->min_quantity)
                                         <span class="badge badge-pill badge-danger">Out of Stock</span>
-                                    @endif</h4>
+                                    @endif</h1>
 
                             <p class="sku-txt">SKU: {{ $product->sku }}</p>
                             @if($product->special_price)
